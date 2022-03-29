@@ -1,0 +1,426 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+             #pic{
+            width: 95%;
+
+        }
+        #text{
+            width: 90%;
+            margin: auto;
+            border-bottom:1px solid gray;
+            color: gray;
+        }
+        #filter{
+            width: 25%;
+            height: 1000px;
+            /* border: 1px solid red; */
+        }
+        #grid{
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 10px;
+            /* border: 1px solid blue; */
+            text-align: center;
+            font-family: AvenirNext-Regular, Helvetica, Arial, sans-serif;;
+            font-weight: 100;
+            
+        }
+        #flex{
+         
+            width: 95%;
+            display: flex;
+            /* border: 1px solid red; */
+            padding: 10px;
+            box-sizing: border-box;
+           
+        }
+        #pricediv{
+            display: flex;
+            justify-content: space-evenly;
+            color: gray;
+            font-family: AvenirNext-Regular, Helvetica, Arial, sans-serif;;
+            margin-top: -20px;
+        }
+        #img{
+            width: 100%;
+        }
+        #maindiv{
+            /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+            */
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+            width: auto;
+            /* height: 400px; */
+            line-height: 20px;
+            padding: 10px;
+        }
+        #strike{
+            text-decoration: line-through;
+        }
+        #filter{
+            /* line-height: 50px; */
+            text-align: center;
+            
+        }
+        #sortNames, #sortprice,#filtercat{
+            width: 200px;
+            height: 30px;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            
+            /* align-items: center; */
+            /* margin: auto; */
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+
+
+    </div>
+
+    <div id="pic">
+
+        <img src="https://shopdisney.in/media/March/2022/banner/d_Fashion-Accessories.jpg" alt="">
+    </div>
+
+    <div id="text">
+        <p>ShopDisney /  Fashion & Accessories</p>
+    </div>
+
+    <div id="flex">
+        <div id="filter">
+            <h3>Filter by:</h3>
+            <select id="sortNames" onchange="handleNameSort()">
+                <option value="">Sort By Names</option>
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
+              </select>
+
+              <br>
+            <select name="Sort by price" id="sortprice" onchange="handlePriceSort()">
+                <option value="">Sort By Price</option>
+                <option value="htl">High To Low</option>
+                <option value="lth">Low To High</option>
+            </select>
+
+            <select id="filtercat" onchange="handleCatSort()">
+                <option value="">Filter by catagery</option>
+                <option value="clothes">Clothes</option>
+                <option value="Shoes">Foot Wear</option>
+                <option value="Bag">Bag</option>
+              </select>
+        </div>
+        <div id="grid">
+
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+cartdata = []
+
+mensdata = [
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002331_1_1.jpg",
+        Name: "Marvel Spider-Man Navy Blue Tshirt For Men",
+        Strikeoffprice : 1399.00,
+        Price: 630.00,
+        Catagery:"T-shirt"
+    },
+
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002294_1_1.jpg",
+        Name: "Marvel Spider-Man Black Tshirt For Men",
+        Strikeoffprice :1299.00 ,
+        Price:585.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002289_1_1.jpg",
+        Name: "Marvel Spider-Man No Way Home Off White Sweatshirt",
+        Strikeoffprice :2199.00 ,
+        Price:880.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002288_1_1.jpg",
+        Name: "Marvel Spider-Man No Way Home Off White Sweatshirt",
+        Strikeoffprice : 2199.00,
+        Price:880. ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002287_1_1.jpg",
+        Name: "Marvel Spider-Man No Way Home Off White Sweatshirt",
+        Strikeoffprice :2199.00 ,
+        Price: 880.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002286_1_1.jpg",
+        Name: "Marvel Spider-Man No Way Home Off White Sweatshirt",
+        Strikeoffprice :2199.00 ,
+        Price: 880.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002285_1_1.jpg",
+        Name: "Marvel Spider-Man No Way Home Red Sweatshirt For Men",
+        Strikeoffprice : 2199.00,
+        Price: 880.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002283_1_1.jpg",
+        Name: "Marvel Spider-Man No Way Home Red Sweatshirt For Men",
+        Strikeoffprice :2199.00 ,
+        Price:880.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002282_1_1.jpg",
+        Name: "Marvel Spider-Man No Way Home Black Sweatshirt For Men",
+        Strikeoffprice :2199.00 ,
+        Price:880.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002281_1_1.jpg",
+        Name: "Marvel Spider-Man Off White Sweatshirt For Men",
+        Strikeoffprice : 2299.00,
+        Price: 920.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002280_1_1.jpg",
+        Name: "Marvel Spider-Man Grey Tshirt For Men",
+        Strikeoffprice :1299.00 ,
+        Price: 585.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002280_1_1.jpg",
+        Name: "Marvel Spider-Man No Way Home Navy Blue Sweatshir",
+        Strikeoffprice : 2199.00 ,
+        Price: 880.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002278_1_1.jpg",
+        Name: "Marvel Spider-Man Black Tshirt For Men",
+        Strikeoffprice : 1399.00,
+        Price:630.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002277_1_1.jpg",
+        Name: "Marvel Spider-Man Off White Tshirt For Men",
+        Strikeoffprice : 1399.00,
+        Price:630.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002276_1_1.jpg",
+        Name: "Marvel Spider-Man Black Tshirt For Men",
+        Strikeoffprice : 1299.00 ,
+        Price:585.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002275_1_1.jpg",
+        Name: "Marvel Spider-Man Grey Tshirt For Men",
+        Strikeoffprice :1299.00 ,
+        Price: 585.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002274_1_1.jpg",
+        Name: "Marvel Spider-Man Grey Tshirt For Me",
+        Strikeoffprice : 1399.00,
+        Price: 630.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002273_1_1.jpg",
+        Name: "Marvel Spider-Man Off White Tshirt For Men",
+        Strikeoffprice :1299.00  ,
+        Price:585.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002271_1_2.jpg",
+        Name: "Marvel Spider-Man Grey Tshirt For Men",
+        Strikeoffprice :1299.00  ,
+        Price: 585.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002268_1_2.jpg",
+        Name: "Marvel Spider-Man Black Tshirt For Men",
+        Strikeoffprice :1299.00 ,
+        Price: 585.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002151_1_2.jpg",
+        Name: "Marvel Spider-Man Red Tshirt For Men",
+        Strikeoffprice :1299.00 ,
+        Price: 585.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002280_1_1.jpg",
+        Name: "Marvel Spider-Man No Way Home Navy Blue Sweatshirt",
+        Strikeoffprice :2199.00 ,
+        Price:880.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmamct050.2_1_4.jpg",
+        Name: "Marvel Logo T-Shirt Black For Men",
+        Strikeoffprice :1495 ,
+        Price: 478,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002276_1_1.jpg",
+        Name: "Marvel Spider-Man Black Tshirt For Men",
+        Strikeoffprice :1299 ,
+        Price:585 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002277_1_1.jpg",
+        Name: "Marvel Spider-Man Off White Tshirt For Men",
+        Strikeoffprice : 1399,
+        Price: 630,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002278_1_1.jpg",
+        Name: "Marvel Spider-Man Black Tshirt For Men",
+        Strikeoffprice :1399.00 ,
+        Price: 630.00 ,
+        Catagery:"T-shirt"
+    },
+
+
+]
+
+displayData(mensdata)
+function handlePriceSort(){
+    console.log("YES")
+    var sort= document.querySelector("#sortprice").value
+    
+    if(sort == "htl"){
+        mensdata.sort(function (a, b) {
+        return b.Price - a.Price;
+    });
+        displayData(mensdata);
+    }
+
+    if(sort == "lth"){
+        mensdata.sort(function (a, b) {
+        return a.Price - b.Price;
+    });
+        displayData(mensdata);
+    }
+}
+
+function handleNameSort(){
+  // console.log("Yes")
+  var sort = document.querySelector("#sortNames").value
+  // console.log(sort)
+  if(sort == "ascending"){
+    mensdata.sort(function (a,b){
+      if(a.Name > b.Name) return 1
+      if(a.Name< b.Name ) return -1
+      return 0
+    })
+    console.log("Yes")
+    displayData(mensdata)
+  }
+
+  if(sort == "descending"){
+    mensdata.sort(function (a,b){
+      if(a.Name > b.Name) return -1
+      if(a.Name < b.Name ) return 1
+      return 0
+    })
+    console.log("NOO")
+    displayData(mensdata)
+  }
+}
+
+// function handleCatSort(){
+//   var sort = document.querySelector("#filtercat").value
+
+//   if(sort == "T-shirt"){
+//      var Tshirt = kidsdata.catagery == "T-shirt"
+//     displayData(kidsdata.catagery == Tshirt)
+//     console.log("Bag")
+//   }
+// }
+  
+    function displayData(mensdata){
+        document.querySelector("#grid").innerHTML=""
+        mensdata.map(function (elem){
+            
+        var maindiv = document.createElement("div")
+        maindiv.setAttribute("id","maindiv")
+        var div1 = document.createElement("div")
+
+        var image = document.createElement("img")
+        image.src=elem.Image
+        image.setAttribute("id","img")
+
+        var name = document.createElement("p")
+        name.innerText=elem.Name
+
+        div1.append(image,name)
+
+        var pricediv = document.createElement("div")
+        pricediv.setAttribute("id", "pricediv")
+
+        var strprice = document.createElement("p")
+        strprice.innerText = "₹"+" " +elem.Strikeoffprice
+        strprice.setAttribute("id","strike")
+
+        var price = document.createElement("P")
+        price.innerText ="₹"+" " +elem.Price
+
+        var cart = document.createElement("button")
+        cart.innerText="Add to cart"
+        cart.addEventListener("click", function(){
+            cartfun(elem)
+      })
+       
+        pricediv.append(strprice,price)
+        maindiv.append(div1,pricediv,cart)
+        document.querySelector("#grid").append(maindiv)
+        
+    })
+    }
+
+
+
+
+    function cartfun(elem){
+        cartdata.push(elem)
+        localStorage.setItem("cart",JSON.stringify(cartdata));
+        alert("Item added to cart")
+        console.log(cartdata)
+    }
+</script>
