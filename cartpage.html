@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;800&family=Prompt&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Prompt', sans-serif;
+        }
+        #container{
+            display: flex;
+        }
+        table,
+td,
+th {
+  /* border: 1px solid #ddd; */
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+ th,td
+ {
+  padding:10px 35px;
+}
+.box>th:nth-child(1){
+    padding-right:300px
+}
+.cartcontain{
+    display: flex;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+#box2{
+    margin-top: 50px;
+}
+#box2>table{
+    border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+a{
+    text-decoration: none;
+}
+.total{
+    font-size: 30px;
+    font-weight: bold;
+}
+.subtotal{
+    font-size: 20px;
+    font-weight: bold;
+}
+.cart-btn{
+    display: block;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    background-color: #0795e6;
+    border-style: none;
+    color: #fff;
+}
+.guest-btn{
+    display: block;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 10px;
+    
+    border:1px solid #0795e6;
+}
+.guest-btn:hover{
+    background-color: #0795e6;
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <h1>cart page</h1>
+    <div id="container">
+        <div class="box1">
+            <main>
+                <table>
+                    <thead>
+                        <!-- <tr>
+                            <th><span>name</span></th>
+                            <th>price</th>
+                            <th>qty</th>
+                            <th>subtotal</th>
+                        </tr> -->
+                    </thead>
+                    
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </main>
+            <div class="emptycart"></div>
+        </div>
+        <div id="box2">
+            <!-- <h1>Order Summary</h1>
+            <hr> -->
+            <div class="heading"></div>
+            <table>
+                <tbody class="box3">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
+<script>
+   
+  var cartData = JSON.parse(localStorage.getItem("cart"));
+  if(cartData.length>0){
+     showdata(cartData)
+  }else{
+    emptycart()
+  }
+  function showdata(cartData){
+    var row = document.createElement("tr");
+
+var td1 = document.createElement("th");
+td1.innerText ="name"
+
+var td2 = document.createElement("th");
+td2.innerText = "price"
+var td3 = document.createElement("th");
+td3.innerText = "qty"
+var td4 = document.createElement("th");
+td4.innerText = "subtotal"
+
+
+
+row.append(td1, td2,td3,td4);
+
+document.querySelector("thead").append(row);
+
+  cartData.map(function(el,index){
+   
+
+      var tr = document.createElement("tr");
+      var td1 = document.createElement("td");
+      var main= document.createElement("div");
+      main.setAttribute("class","cartcontain")
+      var box1= document.createElement("div");
+      var img = document.createElement("img");
+      img.src = el.image_url;
+      box1.append(img)
+      var box2= document.createElement("div");
+      var name = document.createElement("p");
+      name.innerHTML = el.name;
+      var button= document.createElement("button");
+      button.textContent = "remove";
+      button.addEventListener("click",function(){
+          removeitem(el,index)
+      })
+      var button2 = document.createElement("button");
+      var a = document.createElement("a");
+      a.href="mens.html";
+      a.innerHTML= "edit"
+      button2.append(a);
+      box2.append(name,button2,button)
+      main.append(box1,box2);
+      td1.append(main);
+
+      var td2 = document.createElement("td");
+      td2.innerHTML = el.price;
+      
+      tr.append(td1,td2);
+      document.querySelector("tbody").append(tr)
+
+  })
+  function removeitem(el,index){
+      console.log(el,index);
+      cartData.splice(index,1);
+      console.log(cartData);
+      localStorage.setItem("cart",JSON.stringify(cartData));
+      window.location.reload()
+
+
+  }
+  
+   var total = cartData.reduce(function(sum,el){
+          return sum+(el.price)
+   },0)
+   console.log(total)
+   var div = document.createElement("div")
+     var h1 = document.createElement("h1");
+     h1.innerText = "order summery";
+     div.append(h1)
+     document.querySelector(".heading").append(div)
+ 
+    var tr1 = document.createElement("tr");
+    var th = document.createElement("th");
+    th.innerHTML= "Subtotal";
+    var td = document.createElement("td");
+    td.setAttribute("class","subtotal")
+    td.innerHTML= total
+    tr1.append(th,td);
+    var tr2 = document.createElement("tr");
+    var th = document.createElement("th");
+    th.innerHTML = "Total";
+    var td = document.createElement("td");
+    td.setAttribute("class","total")
+    td.innerHTML = total
+    tr2.append(th,td);
+
+    var signin = document.createElement("button");
+    signin.setAttribute("class","cart-btn")
+    signin.textContent= "sign in"
+    var guestcheckout = document.createElement("button");
+    guestcheckout.setAttribute("class","guest-btn")
+    guestcheckout.textContent= "Guest checkout"
+    document.querySelector(".box3").append(tr1,tr2);
+    document.querySelector("#box2").append(signin,guestcheckout);
+    var box2 = document.querySelector("#box2");
+    box2.style.width="30%";
+    box2.style.height="300px";
+    box2.style.border="1px solid #dddddd";
+    
+
+  }
+
+  function emptycart(){
+    var signin_link = document.createElement("a");
+    signin_link.href = "http://test.com";
+    signin_link.target = '_blank';
+    signin_link.innerHTML = "sign in";
+
+     var shopping_link = document.createElement("a");
+     shopping_link.href = "shoppinglink.com";
+     shopping_link.target = "_blank";
+     shopping_link.innerHTML= "here"
+
+
+      var a = document.createElement("a");
+      a.href ="www.google.com";
+      a.target = "_blank";
+      a.innerHTML= "sign in"
+     var p1 = document.createElement("p");
+     p1.innerHTML= "Hakuna Matata. Your bag is empty!";
+     var p2 = document.createElement("p");
+     p2.innerHTML="Not seeing items you've added?";
+     p2.appendChild(signin_link)
+     var p3 = document.createElement("p");
+     
+     p3.innerHTML = "Click here to continue shopping.";
+    
+
+     document.querySelector(".emptycart").append(p1,p2,p3)
+
+  }
+
+</script>
