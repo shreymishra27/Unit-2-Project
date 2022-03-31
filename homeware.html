@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         body {
+        
+        body {
         font-family: "Prompt", sans-serif;
       }
-       /* {
+      /* * {
         margin: 0;
         box-sizing: border-box;
       } */
@@ -113,7 +114,7 @@
         font-size: 15px;
         line-height: 60px;
         color: rgb(82, 79, 79);
-      } 
+      }
              #pic{
             width: 95%;
 
@@ -273,7 +274,7 @@
 
     <div id="pic">
 
-        <img src="https://shopdisney.in/media/March/2022/banner/d_Fashion-Accessories.jpg" alt="">
+        <img src="https://shopdisney.in/media/March/2022/banner/d_Home.jpg" alt="">
     </div>
 
     <div id="text">
@@ -296,12 +297,12 @@
                 <option value="lth">Low To High</option>
             </select>
 
-            <select id="filtercat" onchange="handleCatSort()">
+            <!-- <select id="filtercat" onchange="handleCatSort()">
                 <option value="">Filter by catagery</option>
-                <option value="T-shirt">T-shirts</option>
-                <option value="Foot wear">Foot Wear</option>
-                <!-- <option value="Bag">Bag</option> -->
-              </select>
+                <option value="Mouse Pad">Mouse Pad</option>
+                <option value="Watch">Watch</option>
+                <option value="Bluetooth">Bluetooth</option>
+              </select> -->
         </div>
         <div id="grid">
 
@@ -314,204 +315,246 @@
 
 cartdata = JSON.parse(localStorage.getItem("cart"))||[]
 
-womensdata =[
+Homewaredata =[
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/u/n/untitled-1_1_1.jpg",
-        Name: "Marvel Hawkeye Purple Flip-Flops",
-        Strikeoffprice :699 ,
-        Price:  499,
-        Catagery:"Foot wear"
+        Image:"https://shopdisney.in/media/catalog/product/m/c/mcdfgmgcomiccaptainamerica.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Comic Captain America - Fridge",
+        Strikeoffprice :399 ,
+        Price:  199,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/u/n/untitled-1_copy_11.jpg",
-        Name: "Marvel Hawkeye Black Flip-Flops",
-        Strikeoffprice :699 ,
-        Price:  499,
-        Catagery:"Foot wear"
-    },
-
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003875_1_1.jpg",
-        Name: "Marvel Captain America Sweatshirt For Women - Blue",
-        Strikeoffprice : 1599,
-        Price:  720,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/m/a/marvel_spiderman_folding_desk_5_1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spider-Man Folding Desk Red-Size",
+        Strikeoffprice :1239 ,
+        Price:  1054,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003283_1_1.jpg",
-        Name: "Star Wars Ep- Ix Featured Tshirt For Women - White",
-        Strikeoffprice :799 ,
-        Price:  679,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/4/8/4897060371562-1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Disney Frozen Olaf Soft Light Night Lamp",
+        Strikeoffprice :1099 ,
+        Price:  999,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003190_1_1.jpg",
-        Name: "Disney Mickey & Friends Sweatshirt For Women - Grey",
-        Strikeoffprice :1399 ,
-        Price:  700,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/a/z/az03-1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Hulk Keychain Multicolor",
+        Strikeoffprice :599 ,
+        Price:  319,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-000108_2_1.jpg",
-        Name: "Marvel Captain America Featured Tshirt For Women",
-        Strikeoffprice : 799,
-        Price:  679,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/m/t/mt-1m-im-01.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Iron Man MT-1M Motorized",
+        Strikeoffprice : 940000,
+        Price:  32990,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-19-20-001998_1_1.jpg",
-        Name: "Disney Mickey & Friends Featured Tshirt For Women",
-        Strikeoffprice :799 ,
-        Price: 679 ,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/m/a/mar-11-1-dm28.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spiderman Door Mat Blue",
+        Strikeoffprice :499 ,
+        Price:  349,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.4_1_4.jpg",
-        Name: "Disney Mickey Mouse T-shirt Grey For Women",
-        Strikeoffprice :1395 ,
-        Price: 446 ,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/c/o/cofmwhttwofacespidey1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spider-Man Two Face - Coffee Mug",
+        Strikeoffprice :399 ,
+        Price:  259,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmewct004.22_1_4.jpg",
-        Name: "Disney Minnie Mouse T-shirt Grey For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/c/o/coastrcstonedshield.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Stoned Shield - 10 X 10 (cm)",
+        Strikeoffprice : 399,
+        Price: 199 ,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct045.22_1_4.jpg",
-        Name: "Marvel Logo T-Shirt Yellow For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/d/i/dis-06-7-702q_1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Disney Pixar Cars Bath Towel For Kids",
+        Strikeoffprice : 999,
+        Price:  599,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct045.1_1_6.jpg",
-        Name: "Marvel Logo T-Shirt Grey For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/m/a/mar-06-7-716q_1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spider-Man Bath Towel Red",
+        Strikeoffprice :999 ,
+        Price:  599,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawsct034.2_1_3.jpg",
-        Name: "Marvel Captain America Sleep Shirt Black For Women",
-        Strikeoffprice :1399 ,
-        Price:  447,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/m/a/mar-04-188.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spiderman Comforter Blue",
+        Strikeoffprice :3999 ,
+        Price:  1999,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawsct034.1_1_6.jpg",
-        Name: "Marvel Captain America Sleep Shirt White For Women",
-        Strikeoffprice : 1399,
-        Price:  447,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/m/a/mar-06-h616n841-img4_1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Kids Hulk Hooded Bath Towel",
+        Strikeoffprice :1499 ,
+        Price:  799,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.9_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Sky Blue For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/3/2/3216.jpg",
+        Name: "Marvel Hulk Velvet 2PLY Single Bed Blanket -Green",
+        Strikeoffprice :3499 ,
+        Price: 2999 ,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.6_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Pink For Women",
-        Strikeoffprice :1395 ,
-        Price: 446 ,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/3/2/3287.jpg",
+        Name: "Disney Frozn Bed Sheet",
+        Strikeoffprice : 5999,
+        Price:5499  ,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.2_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Black For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/t/r/trha4444-1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Comics Fitted Sheet 90 x 190 + 25",
+        Strikeoffprice :14799 ,
+        Price:  999,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.22_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Yellow For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/3/2/3289_1.jpg",
+        Name: "Disney Minnie Mouse Double Bed comforter-Pink",
+        Strikeoffprice :5499 ,
+        Price:  3499,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.1_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt White For Women",
-        Strikeoffprice : 1395,
-        Price:  446,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/3/2/3290.jpg",
+        Name: "Disney Mickey Mouse Double Bed comforter-Orange",
+        Strikeoffprice :5499 ,
+        Price:  3499,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmewct004.9_1_6.jpg",
-        Name: "Disney Minnie Mouse T-shirt Sky Blue For Women",
-        Strikeoffprice : 1395,
-        Price:446  ,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/3/2/3280.jpg",
+        Name: "Disney Frozen Double Bedsheet with 2 Pillow Cover-Cream",
+        Strikeoffprice : 3599,
+        Price:  2999,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct049.9_1_7.jpg",
-        Name: "Marvel Logo T-Shirt Sky Blue For Women",
-        Strikeoffprice : 1395,
-        Price:  446,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/3/2/3283.jpg",
+        Name: "Disney Mickey Mouse Double Bedsheet with 2 Pillow Cover-Orange",
+        Strikeoffprice :3599 ,
+        Price:  2999,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct049.2_1_6.jpg",
-        Name: "Marvel Logo T-Shirt Black For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/3/1/3173.jpg",
+        Name: "Marvel Black Panther Velvet Winter Single",
+        Strikeoffprice :5999 ,
+        Price:  4599,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001600_1_2.jpg",
-        Name: "Disney Mickey & Friends Red Sweatshirt For Women",
-        Strikeoffprice :2119 ,
-        Price:  880,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/3/1/3174.jpg",
+        Name: "Marvel Captain America Velvet Winter ",
+        Strikeoffprice :5999 ,
+        Price: 4499 ,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-004595_1_1.jpg",
-        Name: "Disney Mickey & Friends Pink Dress For Women",
-        Strikeoffprice : 1649,
-        Price:  825,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/2/9/2969.jpg",
+        Name: "Marvel Avengers Baby Flannel Quilt-Blue",
+        Strikeoffprice :2000 ,
+        Price:  1699,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-002840_1.jpg",
-        Name: "Disney Mickey & Friends Pink Sweatshirt For Women",
-        Strikeoffprice :1799 ,
-        Price: 810 ,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/2/9/2972.jpg",
+        Name: "Disney Mickey Mouse Baby Quilt-Grey",
+        Strikeoffprice :2099 ,
+        Price:  1699,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-002665_1.jpg",
-        Name: "Disney Mickey & Friends Navy Blue Hoodie For Women",
-        Strikeoffprice : 2199,
-        Price: 880 ,
-        Catagery:"T-shirt"
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/1/0/1022.jpg",
+        Name: "Disney Unicorn Super Soft Baby Quilt-Pink",
+        Strikeoffprice :999 ,
+        Price: 799 ,
+        // Catagery:""
     },
-
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/1/0/1024.jpg",
+        Name: "Disney SImba Super Soft Baby Quilt-Green",
+        Strikeoffprice :999 ,
+        Price:  799,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/1/0/1023.jpg",
+        Name: "Disney Tinker Bell Super Soft Baby Quilt-Pink",
+        Strikeoffprice : 999,
+        Price:  799,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/dis-06-h601.jpg",
+        Name: "Disney Mickey Mouse Kids Hooded Bath Towel",
+        Strikeoffprice :1499 ,
+        Price:  799,
+        // Catagery:""
+    },
+     {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/dis-06-h601h602.jpg",
+        Name: "Disney Mickey Mouse Hooded Bath Towel Pack of 2",
+        Strikeoffprice : 2988,
+        Price:  1499,
+        // Catagery:""
+    }, {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/dis-06-h601n811.jpg",
+        Name: "Disney Mickey Mouse Kids Bath & Hooded Towel Combo",
+        Strikeoffprice :2499 ,
+        Price:  1249,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/dis-06-h602n817.jpg",
+        Name: "Disney Mickey Mouse Kids Hooded & Bath Towel Combo",
+        Strikeoffprice :2499 ,
+        Price:  1249,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/3/3/3307_5.jpg",
+        Name: "Disney Ariel Baby Quilt-Pink",
+        Strikeoffprice :1999 ,
+        Price:  1699,
+        // Catagery:""
+    },
+    
+    
+   
 
 ]
 
-displayData(womensdata)
+displayData(Homewaredata )
 function handlePriceSort(){
     console.log("YES")
     var sort= document.querySelector("#sortprice").value
     
     if(sort == "htl"){
-        womensdata.sort(function (a, b) {
+        Homewaredata .sort(function (a, b) {
         return b.Price - a.Price;
     });
-        displayData(womensdata);
+        displayData(Homewaredata );
     }
 
     if(sort == "lth"){
-        womensdata.sort(function (a, b) {
+        Homewaredata .sort(function (a, b) {
         return a.Price - b.Price;
     });
-        displayData(womensdata);
+        displayData(Homewaredata );
     }
 }
 
@@ -520,38 +563,38 @@ function handleNameSort(){
   var sort = document.querySelector("#sortNames").value
   // console.log(sort)
   if(sort == "ascending"){
-    womensdata.sort(function (a,b){
+    Homewaredata.sort(function (a,b){
       if(a.Name > b.Name) return 1
       if(a.Name< b.Name ) return -1
       return 0
     })
     console.log("Yes")
-    displayData(womensdata)
+    displayData(Homewaredata)
   }
 
   if(sort == "descending"){
-    womensdata.sort(function (a,b){
+    Homewaredata.sort(function (a,b){
       if(a.Name > b.Name) return -1
       if(a.Name < b.Name ) return 1
       return 0
     })
     console.log("NOO")
-    displayData(womensdata)
+    displayData(Homewaredata )
   }
 }
+// function handleCatSort(){
+//   var sort = document.querySelector("#filtercat").value;
 
-function handleCatSort(){
-  var sort = document.querySelector("#filtercat").value;
-
-  var sortlist = womensdata.filter(function (elem){
-      return elem.Catagery == sort;
-  })
-  displayData(sortlist)
-}
+//   var sortlist = Homewaredata.filter(function (elem){
+//       return elem.Catagery == sort;
+//   })
+//   console.log("Sorted")
+//   displayData(sortlist)
+// }
   
-    function displayData(womensdata){
+    function displayData(Homewaredata){
         document.querySelector("#grid").innerHTML=""
-        womensdata.map(function (elem){
+        Homewaredata.map(function (elem){
             
         var maindiv = document.createElement("div")
         maindiv.setAttribute("id","maindiv")

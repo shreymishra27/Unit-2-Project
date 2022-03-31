@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         body {
+        body {
         font-family: "Prompt", sans-serif;
       }
-       /* {
+      /* * {
         margin: 0;
         box-sizing: border-box;
       } */
@@ -113,7 +113,7 @@
         font-size: 15px;
         line-height: 60px;
         color: rgb(82, 79, 79);
-      } 
+      }
              #pic{
             width: 95%;
 
@@ -296,12 +296,12 @@
                 <option value="lth">Low To High</option>
             </select>
 
-            <select id="filtercat" onchange="handleCatSort()">
+            <!-- <select id="filtercat" onchange="handleCatSort()">
                 <option value="">Filter by catagery</option>
-                <option value="T-shirt">T-shirts</option>
-                <option value="Foot wear">Foot Wear</option>
-                <!-- <option value="Bag">Bag</option> -->
-              </select>
+                <option value="Hoodie">Hoodie</option>
+                <option value="Shoes">Foot Wear</option>
+                <option value="T-Shirts">T-shirt</option>
+              </select> -->
         </div>
         <div id="grid">
 
@@ -314,98 +314,34 @@
 
 cartdata = JSON.parse(localStorage.getItem("cart"))||[]
 
-womensdata =[
+dealsdata =[
+{
+        Image:"https://shopdisney.in/media/catalog/product/9/0/903671140103-1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Avengers Endgame Hulk (Deluxe Version)",
+        Strikeoffprice : 20000 ,
+        Price:  19699,
+        // Catagery:""
+    },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/u/n/untitled-1_1_1.jpg",
-        Name: "Marvel Hawkeye Purple Flip-Flops",
-        Strikeoffprice :699 ,
+        Image:"https://shopdisney.in/media/catalog/product/l/b/lbdp50009.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Disney Frozen MDF Kristoff and Sven with Base",
+        Strikeoffprice :999  ,
         Price:  499,
-        Catagery:"Foot wear"
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/u/n/untitled-1_copy_11.jpg",
-        Name: "Marvel Hawkeye Black Flip-Flops",
-        Strikeoffprice :699 ,
+        Image:"https://shopdisney.in/media/catalog/product/d/m/dmzcb_7_1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Avengers Domez Collection Combo Pack of 3",
+        Strikeoffprice : 2000 ,
+        Price:  1497,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/f/u/fu39209_-_molten_man.1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spiderman Far From Home Molten Man 4 Inch",
+        Strikeoffprice :  999,
         Price:  499,
-        Catagery:"Foot wear"
-    },
-
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003875_1_1.jpg",
-        Name: "Marvel Captain America Sweatshirt For Women - Blue",
-        Strikeoffprice : 1599,
-        Price:  720,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003283_1_1.jpg",
-        Name: "Star Wars Ep- Ix Featured Tshirt For Women - White",
-        Strikeoffprice :799 ,
-        Price:  679,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003190_1_1.jpg",
-        Name: "Disney Mickey & Friends Sweatshirt For Women - Grey",
-        Strikeoffprice :1399 ,
-        Price:  700,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-000108_2_1.jpg",
-        Name: "Marvel Captain America Featured Tshirt For Women",
-        Strikeoffprice : 799,
-        Price:  679,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-19-20-001998_1_1.jpg",
-        Name: "Disney Mickey & Friends Featured Tshirt For Women",
-        Strikeoffprice :799 ,
-        Price: 679 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.4_1_4.jpg",
-        Name: "Disney Mickey Mouse T-shirt Grey For Women",
-        Strikeoffprice :1395 ,
-        Price: 446 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmewct004.22_1_4.jpg",
-        Name: "Disney Minnie Mouse T-shirt Grey For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct045.22_1_4.jpg",
-        Name: "Marvel Logo T-Shirt Yellow For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct045.1_1_6.jpg",
-        Name: "Marvel Logo T-Shirt Grey For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawsct034.2_1_3.jpg",
-        Name: "Marvel Captain America Sleep Shirt Black For Women",
-        Strikeoffprice :1399 ,
-        Price:  447,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawsct034.1_1_6.jpg",
-        Name: "Marvel Captain America Sleep Shirt White For Women",
-        Strikeoffprice : 1399,
-        Price:  447,
-        Catagery:"T-shirt"
+        // Catagery:""
     },
     {
         Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.9_1_6.jpg",
@@ -436,6 +372,182 @@ womensdata =[
         Catagery:"T-shirt"
     },
     {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001766_1_2.jpg"   , 
+        Name: "Marvel Spider-Man Grey Sweatshirt",
+        Strikeoffprice : 2199.00,
+        Price:880.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001735_1_2.jpg"   , 
+        Name: "Marvel Spider-Man No Way Home Tshirt",
+        Strikeoffprice : 699.00,
+        Price:594.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001762_1_2.jpg"   , 
+        Name: "Marvel Spider-Man Black Sweatshirt",
+        Strikeoffprice : 2199.00,
+        Price:880.00,
+        Catagery:"T-shirt"
+    },
+    
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001739_1_2.jpg"   , 
+        Name: "Marvel Spider-Man No Way Home Tshirt",
+        Strikeoffprice : 799.00,
+        Price:679.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001734_1_2.jpg"   , 
+        Name: "Marvel Spider-Man No Way Home White Tshirt",
+        Strikeoffprice : 599.00,
+        Price:509.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/d/ddm-1988-288-ptd.jpg",
+        Name: "Disney Princess Dream Mug Multicolor",
+        Strikeoffprice : 299 ,
+        Price: 199 ,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/disney_minnie_speed_stainless_steel_bottle_650_ml_1.png",
+        Name: "Disney Minnie Mouse Speed Stainless Steel Bottle, 650 ML Pink",
+        Strikeoffprice : 499 ,
+        Price:425  ,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/disney_minnie_pluto_stainless_steel_bottle_800_ml_1.png",
+        Name: "Disney Minnie Mouse Pluto Stainless Steel",
+        Strikeoffprice : 649 ,
+        Price:  520,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/disney_minnie_pluto_stainless_steel_bottle_600_ml_1.png",
+        Name: "Disney Mickey Mouse Pluto Stainless Steel ",
+        Strikeoffprice : 549 ,
+        Price:  467,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/disney_mickey_pluto_stainless_steel_bottle_600_ml_1.png",
+        Name: "Disney Minnie Mouse Pluto Stainless Steel",
+        Strikeoffprice : 549 ,
+        Price:  467,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/disney_minnie_fizzy_stainless_steel_bottle_800_ml_1.png",
+        Name: "Disney Mickey Mouse Pluto Stainless Steel ",
+        Strikeoffprice : 599 ,
+        Price:  480,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/disney_princess_kiddo_stainless_steel_insulated_bottle_500_ml_1_1.jpg",
+        Name: "Disney Princess Kiddo Stainless Steel ",
+        Strikeoffprice : 912 ,
+        Price:  776,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdpublicenemyspidey1.jpg",
+        Name: "Marvel Spider-Man Public Enemy - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdpeterparkergrunge1.jpg",
+        Name: "Marvel Spider-Man Peter Parker Grunge - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdpeterblackandgold1.jpg",
+        Name: "Marvel Spider-Man Peter Black and Gold - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdnowayhomespidey1.jpg",
+        Name: "Marvel Spider-Man No Way Home - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdnewspidertech1.jpg",
+        Name: "Marvel Spider-Man New Tech - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdneighborhoodspidey1.jpg",
+        Name: "Marvel Spider-Man Neighborhood - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdmysticartsspidey1.jpg",
+        Name: "Marvel Spider-Man Mystic Arts - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdintegratedspiderlogo1.jpg",
+        Name: "Marvel Spider-Man Integrated Logo - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdextraordinaryspiderman1.jpg",
+        Name: "Marvel Spider-Man Extraordinary man - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/c/mcdmopdall3spidey1.jpg",
+        Name: "Marvel Spider-Man All 3 - Mouse Pad Multicolor For Unisex",
+        Strikeoffprice : 499,
+        Price:  399,
+        Catagery:"Mouse Pad"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/d/i/disney_minnie_kiddo_stainless_steel_insulated_bottle_500_ml_1.jpg",
+        Name: "Disney Minnie Mouse Kiddo Stainless Steel ",
+        Strikeoffprice : 912 ,
+        Price:  776,
+        // Catagery:""
+    },
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001738_1_2.jpg"   , 
+        Name: "Marvel Spider-Man No Way Home Black Tshir",
+        Strikeoffprice : 699.00,
+        Price:594.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001731_1_2.jpg"   , 
+        Name: "Marvel Spider-Man No Way Home Red Tshirt",
+        Strikeoffprice : 699.00,
+        Price:594.00,
+        Catagery:"T-shirt"
+    },
+    {
         Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.1_1_6.jpg",
         Name: "Disney Mickey Mouse T-shirt White For Women",
         Strikeoffprice : 1395,
@@ -450,68 +562,68 @@ womensdata =[
         Catagery:"T-shirt"
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct049.9_1_7.jpg",
-        Name: "Marvel Logo T-Shirt Sky Blue For Women",
-        Strikeoffprice : 1395,
-        Price:  446,
+        Image:"https://shopdisney.in/media/catalog/product/s/p/sportscombopack_1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spiderman 4 in 1 Mega Sports Combo ",
+        Strikeoffprice :1999  ,
+        Price:  1499,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/f/u/fu36342.1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel: Captain Marvel - Vers 4 Inch Pop By Funko",
+        Strikeoffprice : 1499 ,
+        Price:  1099,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002277_1_1.jpg",
+        Name: "Marvel Spider-Man Off White Tshirt For Men",
+        Strikeoffprice : 1399.00,
+        Price:630.00 ,
         Catagery:"T-shirt"
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct049.2_1_6.jpg",
-        Name: "Marvel Logo T-Shirt Black For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002276_1_1.jpg",
+        Name: "Marvel Spider-Man Black Tshirt For Men",
+        Strikeoffprice : 1299.00 ,
+        Price:585.00 ,
         Catagery:"T-shirt"
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001600_1_2.jpg",
-        Name: "Disney Mickey & Friends Red Sweatshirt For Women",
-        Strikeoffprice :2119 ,
-        Price:  880,
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002275_1_1.jpg",
+        Name: "Marvel Spider-Man Grey Tshirt For Men",
+        Strikeoffprice :1299.00 ,
+        Price: 585.00,
         Catagery:"T-shirt"
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-004595_1_1.jpg",
-        Name: "Disney Mickey & Friends Pink Dress For Women",
-        Strikeoffprice : 1649,
-        Price:  825,
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002274_1_1.jpg",
+        Name: "Marvel Spider-Man Grey Tshirt For Me",
+        Strikeoffprice : 1399.00,
+        Price: 630.00,
         Catagery:"T-shirt"
     },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-002840_1.jpg",
-        Name: "Disney Mickey & Friends Pink Sweatshirt For Women",
-        Strikeoffprice :1799 ,
-        Price: 810 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-002665_1.jpg",
-        Name: "Disney Mickey & Friends Navy Blue Hoodie For Women",
-        Strikeoffprice : 2199,
-        Price: 880 ,
-        Catagery:"T-shirt"
-    },
-
+    
 
 ]
 
-displayData(womensdata)
+displayData(dealsdata)
 function handlePriceSort(){
     console.log("YES")
     var sort= document.querySelector("#sortprice").value
     
     if(sort == "htl"){
-        womensdata.sort(function (a, b) {
+        dealsdata.sort(function (a, b) {
         return b.Price - a.Price;
     });
-        displayData(womensdata);
+        displayData(dealsdata);
     }
 
     if(sort == "lth"){
-        womensdata.sort(function (a, b) {
+        fashiondata.sort(function (a, b) {
         return a.Price - b.Price;
     });
-        displayData(womensdata);
+        displayData(dealsdata);
     }
 }
 
@@ -520,38 +632,31 @@ function handleNameSort(){
   var sort = document.querySelector("#sortNames").value
   // console.log(sort)
   if(sort == "ascending"){
-    womensdata.sort(function (a,b){
+    fashiondata.sort(function (a,b){
       if(a.Name > b.Name) return 1
       if(a.Name< b.Name ) return -1
       return 0
     })
     console.log("Yes")
-    displayData(womensdata)
+    displayData(dealsdata)
   }
 
   if(sort == "descending"){
-    womensdata.sort(function (a,b){
+    fashiondata.sort(function (a,b){
       if(a.Name > b.Name) return -1
       if(a.Name < b.Name ) return 1
       return 0
     })
     console.log("NOO")
-    displayData(womensdata)
+    displayData(dealsdata)
   }
 }
 
-function handleCatSort(){
-  var sort = document.querySelector("#filtercat").value;
 
-  var sortlist = womensdata.filter(function (elem){
-      return elem.Catagery == sort;
-  })
-  displayData(sortlist)
-}
   
-    function displayData(womensdata){
+    function displayData(dealsdata){
         document.querySelector("#grid").innerHTML=""
-        womensdata.map(function (elem){
+        dealsdata.map(function (elem){
             
         var maindiv = document.createElement("div")
         maindiv.setAttribute("id","maindiv")
