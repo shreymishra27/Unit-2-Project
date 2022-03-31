@@ -89,7 +89,7 @@
         border-radius: 30px;
         padding: 3px 50px 3px 10px;
       }
-      .search-box {
+      input.search-box {
         background-color: #ebf6fc;
         outline: none;
         height: 35px;
@@ -97,8 +97,9 @@
         border: 0;
         border-radius: 20px;
         width: 100%;
+        margin: 0;
       }
-      .search-button {
+      button.search-button {
         position: absolute;
         right: 4px;
         top: 4px;
@@ -109,6 +110,7 @@
         width: 35px;
         height: 35px;
         outline: 0;
+        margin: 0;
       }
       .nav-2 {
         border-top: 0.1px solid rgb(226, 221, 221);
@@ -230,6 +232,7 @@
       }
       .container-4 img {
         cursor: pointer;
+        width: 100%;
       }
 
       /* container-5 */
@@ -252,6 +255,7 @@
       }
       .container-5 img {
         cursor: pointer;
+        width: 100%;
       }
 
       /* container-6 */
@@ -277,6 +281,7 @@
       .container-7 {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         position: relative;
         width: 98%;
         margin: 40px auto;
@@ -414,9 +419,11 @@
       .container-11 {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         position: relative;
         width: 98%;
         margin: 40px auto;
+        padding: 10px;
       }
       .container-11 > div {
         text-align: center;
@@ -509,7 +516,7 @@
         justify-content: space-around;
       }
       .buff > div > img {
-        width: 120%;
+        width: 100%;
       }
       .container-12 {
         margin: 160px 0;
@@ -662,6 +669,46 @@
         margin-left: 370px;
         color: #7f8183;
         margin-top: 100px;
+      }
+      @media all and (max-width:720px){
+        .nav {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        padding: 0 20px;
+      }
+      .guest {
+      display: none;
+      }
+      .nav-right {
+        display: none;
+      }
+      /* nav-2 */
+      .nav-2 {
+        display: flex;
+        justify-content: center;
+      }
+      .sale{
+        display: none;
+      }
+      .opt{
+        display: none;
+      }
+      .search-container{
+        flex: 1;
+      }
+      /* constainer-3 */
+      .focus {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap:wrap;
+      }
+      /* container-13 */
+      .corner {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
       }
     </style>
   </head>
