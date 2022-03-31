@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         body {
+        body {
         font-family: "Prompt", sans-serif;
       }
-       /* {
+      /* * {
         margin: 0;
         box-sizing: border-box;
       } */
@@ -113,7 +113,7 @@
         font-size: 15px;
         line-height: 60px;
         color: rgb(82, 79, 79);
-      } 
+      }
              #pic{
             width: 95%;
 
@@ -238,7 +238,6 @@
                 d="M112 112C112 50.14 162.1 0 224 0C285.9 0 336 50.14 336 112V160H400C426.5 160 448 181.5 448 208V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V208C0 181.5 21.49 160 48 160H112V112zM160 160H288V112C288 76.65 259.3 48 224 48C188.7 48 160 76.65 160 112V160zM136 256C149.3 256 160 245.3 160 232C160 218.7 149.3 208 136 208C122.7 208 112 218.7 112 232C112 245.3 122.7 256 136 256zM312 208C298.7 208 288 218.7 288 232C288 245.3 298.7 256 312 256C325.3 256 336 245.3 336 232C336 218.7 325.3 208 312 208z"
               />
             </svg>
-            <span id="cartno">0</span>
             <a href="">My Bag</a>
           </div>
         </div>
@@ -271,7 +270,6 @@
           </button>
         </div>
       </div>
-
     <div id="pic">
 
         <img src="https://shopdisney.in/media/March/2022/banner/d_Fashion-Accessories.jpg" alt="">
@@ -297,12 +295,12 @@
                 <option value="lth">Low To High</option>
             </select>
 
-            <select id="filtercat" onchange="handleCatSort()">
+            <!-- <select id="filtercat" onchange="handleCatSort()">
                 <option value="">Filter by catagery</option>
-                <option value="T-shirt">T-shirts</option>
-                <option value="Foot wear">Foot Wear</option>
-                <!-- <option value="Bag">Bag</option> -->
-              </select>
+                <option value="Hoodie">Hoodie</option>
+                <option value="Shoes">Foot Wear</option>
+                <option value="T-Shirts">T-shirt</option>
+              </select> -->
         </div>
         <div id="grid">
 
@@ -315,167 +313,58 @@
 
 cartdata = JSON.parse(localStorage.getItem("cart"))||[]
 
-womensdata =[
+fashiondata =[
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/u/n/untitled-1_1_1.jpg",
-        Name: "Marvel Hawkeye Purple Flip-Flops",
-        Strikeoffprice :699 ,
-        Price:  499,
-        Catagery:"Foot wear",
-        Incart: 1,
+        Image:"https://shopdisney.in/media/catalog/product/s/t/sty-21-22-001738_1_2.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spider-Man No Way Home Black",
+        Strikeoffprice :  699,
+        Price:  594,
+        Catagery:"T-Shirts"
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/u/n/untitled-1_copy_11.jpg",
-        Name: "Marvel Hawkeye Black Flip-Flops",
-        Strikeoffprice :699 ,
-        Price:  499,
-        Catagery:"Foot wear",
-        Incart: 1,
-    },
-
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003875_1_1.jpg",
-        Name: "Marvel Captain America Sweatshirt For Women - Blue",
-        Strikeoffprice : 1599,
-        Price:  720,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003283_1_1.jpg",
-        Name: "Star Wars Ep- Ix Featured Tshirt For Women - White",
-        Strikeoffprice :799 ,
-        Price:  679,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003190_1_1.jpg",
-        Name: "Disney Mickey & Friends Sweatshirt For Women - Grey",
-        Strikeoffprice :1399 ,
-        Price:  700,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-000108_2_1.jpg",
-        Name: "Marvel Captain America Featured Tshirt For Women",
-        Strikeoffprice : 799,
-        Price:  679,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-19-20-001998_1_1.jpg",
-        Name: "Disney Mickey & Friends Featured Tshirt For Women",
-        Strikeoffprice :799 ,
-        Price: 679 ,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
+        Image:"https://shopdisney.in/media/catalog/product/s/t/sty-21-22-001731_1_2.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spider-Man No Way Home Red",
+        Strikeoffprice :699  ,
+        Price:  594,
+        Catagery:"T-Shirts"
+    },{
+        Image:"https://shopdisney.in/media/catalog/product/d/l/dlk0028.2_1_6.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Disney The Lion King T-shirt Black",
+        Strikeoffprice : 899 ,
+        Price:  413,
+        Catagery:"T-Shirts"
+    },{
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002331_1_1.jpg",
+        Name: "Marvel Spider-Man Navy Blue",
+        Strikeoffprice : 1399 ,
+        Price:  630,
+        Catagery:"T-Shirts"
+    },{
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002294_1_1.jpg",
+        Name: "Marvel Spider-Man Black Tshirt",
+        Strikeoffprice :  1299,
+        Price:  585,
+        Catagery:"T-Shirts"
+    },{
         Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.4_1_4.jpg",
-        Name: "Disney Mickey Mouse T-shirt Grey For Women",
-        Strikeoffprice :1395 ,
-        Price: 446 ,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmewct004.22_1_4.jpg",
-        Name: "Disney Minnie Mouse T-shirt Grey For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct045.22_1_4.jpg",
-        Name: "Marvel Logo T-Shirt Yellow For Women",
-        Strikeoffprice :1395 ,
+        Name: "Disney Mickey Mouse T-shirt",
+        Strikeoffprice :  1395,
         Price:  446,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct045.1_1_6.jpg",
-        Name: "Marvel Logo T-Shirt Grey For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawsct034.2_1_3.jpg",
-        Name: "Marvel Captain America Sleep Shirt Black For Women",
-        Strikeoffprice :1399 ,
-        Price:  447,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawsct034.1_1_6.jpg",
-        Name: "Marvel Captain America Sleep Shirt White For Women",
-        Strikeoffprice : 1399,
-        Price:  447,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.9_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Sky Blue For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.6_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Pink For Women",
-        Strikeoffprice :1395 ,
-        Price: 446 ,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.2_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Black For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.22_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Yellow For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt",
-        Incart: 1,
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.1_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt White For Women",
-        Strikeoffprice : 1395,
-        Price:  446,
-        Catagery:"T-shirt",
-        Incart: 1,
+        Catagery:"T-Shirts"
     },
     {
         Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmewct004.9_1_6.jpg",
         Name: "Disney Minnie Mouse T-shirt Sky Blue For Women",
         Strikeoffprice : 1395,
         Price:446  ,
-        Catagery:"T-shirt",
-        Incart: 1,
+        Catagery:"T-shirt"
     },
     {
         Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct049.9_1_7.jpg",
         Name: "Marvel Logo T-Shirt Sky Blue For Women",
         Strikeoffprice : 1395,
         Price:  446,
-        Catagery:"T-shirt",
-        Incart: 1,
+        Catagery:"T-shirt"
     },
     {
         Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct049.2_1_6.jpg",
@@ -489,16 +378,14 @@ womensdata =[
         Name: "Disney Mickey & Friends Red Sweatshirt For Women",
         Strikeoffprice :2119 ,
         Price:  880,
-        Catagery:"T-shirt",
-        Incart: 1,
+        Catagery:"T-shirt"
     },
     {
         Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-004595_1_1.jpg",
         Name: "Disney Mickey & Friends Pink Dress For Women",
         Strikeoffprice : 1649,
         Price:  825,
-        Catagery:"T-shirt",
-        Incart: 1,
+        Catagery:"T-shirt"
     },
     {
         Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-002840_1.jpg",
@@ -512,30 +399,102 @@ womensdata =[
         Name: "Disney Mickey & Friends Navy Blue Hoodie For Women",
         Strikeoffprice : 2199,
         Price: 880 ,
-        Catagery:"T-shirt",
-        Incart: 1,
+        Catagery:"T-shirt"
+    },
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001731_1_2.jpg"   , 
+        Name: "Marvel Spider-Man No Way Home Red Tshirt",
+        Strikeoffprice : 699.00,
+        Price:594.00,
+        Catagery:"T-shirt"
     },
 
+    
+  
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001770_1_2.jpg"   , 
+        Name: "Marvel Spider-Man Grey Hoodie",
+        Strikeoffprice : 2299.00,
+        Price:805.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001760_1_2.jpg"   , 
+        Name: "Marvel Spider-Man Red Tshirt",
+        Strikeoffprice : 1299.00,
+        Price:520.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image: "https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-004632_1_2.jpg"   , 
+        Name: "Marvel Spider-Man Red Tshirt",
+        Strikeoffprice : 1099.00,
+        Price:479.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001917_1_3.jpg",
+        Name: "Marvel Spider-Man Blue Sweatshirt",
+        Strikeoffprice : 2099.00,
+        Price: 840.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002278_1_1.jpg",
+        Name: "Marvel Spider-Man Black Tshirt For Men",
+        Strikeoffprice : 1399.00,
+        Price:630.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002277_1_1.jpg",
+        Name: "Marvel Spider-Man Off White Tshirt For Men",
+        Strikeoffprice : 1399.00,
+        Price:630.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002276_1_1.jpg",
+        Name: "Marvel Spider-Man Black Tshirt For Men",
+        Strikeoffprice : 1299.00 ,
+        Price:585.00 ,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002275_1_1.jpg",
+        Name: "Marvel Spider-Man Grey Tshirt For Men",
+        Strikeoffprice :1299.00 ,
+        Price: 585.00,
+        Catagery:"T-shirt"
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-002274_1_1.jpg",
+        Name: "Marvel Spider-Man Grey Tshirt For Me",
+        Strikeoffprice : 1399.00,
+        Price: 630.00,
+        Catagery:"T-shirt"
+    },
+    
 
 ]
 
-displayData(womensdata)
+displayData(fashiondata)
 function handlePriceSort(){
     console.log("YES")
     var sort= document.querySelector("#sortprice").value
     
     if(sort == "htl"){
-        womensdata.sort(function (a, b) {
+        fashiondata.sort(function (a, b) {
         return b.Price - a.Price;
     });
-        displayData(womensdata);
+        displayData(fashiondata);
     }
 
     if(sort == "lth"){
-        womensdata.sort(function (a, b) {
+        fashiondata.sort(function (a, b) {
         return a.Price - b.Price;
     });
-        displayData(womensdata);
+        displayData(fashiondata);
     }
 }
 
@@ -544,38 +503,31 @@ function handleNameSort(){
   var sort = document.querySelector("#sortNames").value
   // console.log(sort)
   if(sort == "ascending"){
-    womensdata.sort(function (a,b){
+    fashiondata.sort(function (a,b){
       if(a.Name > b.Name) return 1
       if(a.Name< b.Name ) return -1
       return 0
     })
     console.log("Yes")
-    displayData(womensdata)
+    displayData(fashiondata)
   }
 
   if(sort == "descending"){
-    womensdata.sort(function (a,b){
+    fashiondata.sort(function (a,b){
       if(a.Name > b.Name) return -1
       if(a.Name < b.Name ) return 1
       return 0
     })
     console.log("NOO")
-    displayData(womensdata)
+    displayData(fashiondata)
   }
 }
 
-function handleCatSort(){
-  var sort = document.querySelector("#filtercat").value;
 
-  var sortlist = womensdata.filter(function (elem){
-      return elem.Catagery == sort;
-  })
-  displayData(sortlist)
-}
   
-    function displayData(womensdata){
+    function displayData(fashiondata){
         document.querySelector("#grid").innerHTML=""
-        womensdata.map(function (elem){
+        fashiondata.map(function (elem){
             
         var maindiv = document.createElement("div")
         maindiv.setAttribute("id","maindiv")
@@ -603,8 +555,7 @@ function handleCatSort(){
         var cart = document.createElement("button")
         cart.innerText="Add to cart"
         cart.addEventListener("click", function(){
-            cartfun(elem);
-            cartNumber()
+            cartfun(elem)
       })
        
         pricediv.append(strprice,price)
@@ -623,28 +574,4 @@ function handleCatSort(){
         alert("Item added to cart")
         console.log(cartdata)
     }
-
-
-
-    function onloadcartnumber() {
-  var productnumber = localStorage.getItem("cartNumber");
-  if (productnumber) {
-    document.querySelector(" #cartno").textContent = productnumber
-  }
-}
-
-function cartNumber() {
-  var productnumber = localStorage.getItem("cartNumber") || []
-  productnumber = parseInt(productnumber)
-  if (productnumber) {
-    localStorage.setItem("cartNumber", productnumber + 1);
-    document.querySelector("#cartno").textContent = productnumber + 1;
-  } else {
-    localStorage.setItem("cartNumber", 1);
-    document.querySelector("#cartno").innerText = 1;
-  }
-
-
-}
-onloadcartnumber();
 </script>
