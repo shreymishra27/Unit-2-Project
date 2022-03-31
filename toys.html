@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         body {
+        body {
         font-family: "Prompt", sans-serif;
       }
-       /* {
+      /* * {
         margin: 0;
         box-sizing: border-box;
       } */
@@ -113,7 +113,7 @@
         font-size: 15px;
         line-height: 60px;
         color: rgb(82, 79, 79);
-      } 
+      }
              #pic{
             width: 95%;
 
@@ -273,7 +273,7 @@
 
     <div id="pic">
 
-        <img src="https://shopdisney.in/media/March/2022/banner/d_Fashion-Accessories.jpg" alt="">
+        <img src="https://shopdisney.in/media/March/2022/banner/d_Toys.jpg" alt="">
     </div>
 
     <div id="text">
@@ -296,12 +296,12 @@
                 <option value="lth">Low To High</option>
             </select>
 
-            <select id="filtercat" onchange="handleCatSort()">
+            <!-- <select id="filtercat" onchange="handleCatSort()">
                 <option value="">Filter by catagery</option>
-                <option value="T-shirt">T-shirts</option>
-                <option value="Foot wear">Foot Wear</option>
-                <!-- <option value="Bag">Bag</option> -->
-              </select>
+                <option value="clothes">Clothes</option>
+                <option value="Shoes">Foot Wear</option>
+                <option value="Bag">Bag</option>
+              </select> -->
         </div>
         <div id="grid">
 
@@ -314,204 +314,211 @@
 
 cartdata = JSON.parse(localStorage.getItem("cart"))||[]
 
-womensdata =[
+toysdata =[
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/u/n/untitled-1_1_1.jpg",
-        Name: "Marvel Hawkeye Purple Flip-Flops",
-        Strikeoffprice :699 ,
-        Price:  499,
-        Catagery:"Foot wear"
+        Image:"https://shopdisney.in/media/catalog/product/9/0/903671140103-1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Avengers Endgame Hulk (Deluxe Version)",
+        Strikeoffprice : 20000 ,
+        Price:  19699,
+        // Catagery:""
     },
     {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/u/n/untitled-1_copy_11.jpg",
-        Name: "Marvel Hawkeye Black Flip-Flops",
-        Strikeoffprice :699 ,
+        Image:"https://shopdisney.in/media/catalog/product/l/b/lbdp50009.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Disney Frozen MDF Kristoff and Sven with Base",
+        Strikeoffprice :999  ,
         Price:  499,
-        Catagery:"Foot wear"
+        // Catagery:""
     },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/d/m/dmzcb_7_1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Avengers Domez Collection Combo Pack of 3",
+        Strikeoffprice : 2000 ,
+        Price:  1497,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/f/u/fu39209_-_molten_man.1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spiderman Far From Home Molten Man 4 Inch",
+        Strikeoffprice :  999,
+        Price:  499,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/s/p/sportscombopack_1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spiderman 4 in 1 Mega Sports Combo ",
+        Strikeoffprice :1999  ,
+        Price:  1499,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/f/u/fu36342.1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel: Captain Marvel - Vers 4 Inch Pop By Funko",
+        Strikeoffprice : 1499 ,
+        Price:  1099,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/p/u/puzlecbmarvelcomicscollection1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Marvel Comics Collection - Cardboard",
+        Strikeoffprice : 1499 ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/f/u/fu39211.1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spiderman Far From Home Hydroman 4 Inch ",
+        Strikeoffprice : 999 ,
+        Price:  599,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/f/u/fu36352.1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel: Captain Marvel - Yon-Rogg 4 Inch Pop",
+        Strikeoffprice :  1499,
+        Price:  1099,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/9/1/9106700350832-1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Spiderman Far From Home: Mysterio 1/10th",
+        Strikeoffprice : 29999 ,
+        Price:  20499,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/f/r/frozen2tent_2.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Disney Frozen 2 Playhouse Tent Multicolor",
+        Strikeoffprice :  1499,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/1/5/15801821140186-1.jpg?width=300&height=&canvas=300,&quality=80&bg-color=255,255,255&fit=bounds",
+        Name: "Marvel Comics - Deadpool 1:10th Scale Deluxe Statue",
+        Strikeoffprice : 25999 ,
+        Price:  23799,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlemgmanvsmachine1.jpg",
+        Name: "Marvel Man VS Machine Suit-Magnetic Puzzles",
+        Strikeoffprice : 1499 ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlemgcapamsuit1.jpg",
+        Name: "Marvel Cap I am Suit-Magnetic Puzzles",
+        Strikeoffprice :1499  ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbavengerarmycaptainmarvel1.jpg",
+        Name: "Marvel Avenger Army Captain Marvel - Cardboard Puzzles",
+        Strikeoffprice :1499  ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbmonstervsmachine1.jpg",
+        Name: "Marvel Monster vs Machine - Cardboard Puzzles",
+        Strikeoffprice :1499  ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbweareintheendgame1.jpg",
+        Name: "Marvel We are in the Endgame - Cardboard Puzzles",
+        Strikeoffprice : 1499 ,
+        Price: 999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbmarklxxxv1.jpg",
+        Name: "Marvel Mark LXXXV - Cardboard Puzzles",
+        Strikeoffprice : 1499 ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbfierythanos1.jpg",
+        Name: "Marvel Fiery Thanos - Cardboard Puzzles",
+        Strikeoffprice : 1499 ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbteamgoals1.jpg",
+        Name: "Marvel Team Goals - Cardboard Puzzles",
+        Strikeoffprice :1499  ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbtearmeup1.jpg",
+        Name: "Disney Tear me up - Cardboard Puzzles",
+        Strikeoffprice :  1499,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbstarwarsensemble1.jpg",
+        Name: "Star Wars Starwars Ensemble - Cardboard Puzzles",
+        Strikeoffprice :  1499,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbsithtroopers1.jpg",
+        Name: "Star Wars Sith Troopers - Cardboard Puzzles",
+        Strikeoffprice :1499  ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlecbfrozentogether1.jpg",
+        Name: "Disney Frozen together - Cardboard Puzzles",
+        Strikeoffprice :1499  ,
+        Price:  999,
+        // Catagery:""
+    },
+    {
+        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/p/u/puzlemgcapamsuit1.jpg",
+        Name: "Marvel Cap Am Suit - Magnetic Puzzles",
+        Strikeoffprice : 1499 ,
+        Price:  1199,
+        // Catagery:""
+    },
+   
 
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003875_1_1.jpg",
-        Name: "Marvel Captain America Sweatshirt For Women - Blue",
-        Strikeoffprice : 1599,
-        Price:  720,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003283_1_1.jpg",
-        Name: "Star Wars Ep- Ix Featured Tshirt For Women - White",
-        Strikeoffprice :799 ,
-        Price:  679,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-003190_1_1.jpg",
-        Name: "Disney Mickey & Friends Sweatshirt For Women - Grey",
-        Strikeoffprice :1399 ,
-        Price:  700,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-000108_2_1.jpg",
-        Name: "Marvel Captain America Featured Tshirt For Women",
-        Strikeoffprice : 799,
-        Price:  679,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-19-20-001998_1_1.jpg",
-        Name: "Disney Mickey & Friends Featured Tshirt For Women",
-        Strikeoffprice :799 ,
-        Price: 679 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.4_1_4.jpg",
-        Name: "Disney Mickey Mouse T-shirt Grey For Women",
-        Strikeoffprice :1395 ,
-        Price: 446 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmewct004.22_1_4.jpg",
-        Name: "Disney Minnie Mouse T-shirt Grey For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct045.22_1_4.jpg",
-        Name: "Marvel Logo T-Shirt Yellow For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct045.1_1_6.jpg",
-        Name: "Marvel Logo T-Shirt Grey For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawsct034.2_1_3.jpg",
-        Name: "Marvel Captain America Sleep Shirt Black For Women",
-        Strikeoffprice :1399 ,
-        Price:  447,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawsct034.1_1_6.jpg",
-        Name: "Marvel Captain America Sleep Shirt White For Women",
-        Strikeoffprice : 1399,
-        Price:  447,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.9_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Sky Blue For Women",
-        Strikeoffprice : 1395,
-        Price: 446 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.6_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Pink For Women",
-        Strikeoffprice :1395 ,
-        Price: 446 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.2_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Black For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.22_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt Yellow For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmfwct032.1_1_6.jpg",
-        Name: "Disney Mickey Mouse T-shirt White For Women",
-        Strikeoffprice : 1395,
-        Price:  446,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmewct004.9_1_6.jpg",
-        Name: "Disney Minnie Mouse T-shirt Sky Blue For Women",
-        Strikeoffprice : 1395,
-        Price:446  ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct049.9_1_7.jpg",
-        Name: "Marvel Logo T-Shirt Sky Blue For Women",
-        Strikeoffprice : 1395,
-        Price:  446,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/m/m/mmawct049.2_1_6.jpg",
-        Name: "Marvel Logo T-Shirt Black For Women",
-        Strikeoffprice :1395 ,
-        Price:  446,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-21-22-001600_1_2.jpg",
-        Name: "Disney Mickey & Friends Red Sweatshirt For Women",
-        Strikeoffprice :2119 ,
-        Price:  880,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-004595_1_1.jpg",
-        Name: "Disney Mickey & Friends Pink Dress For Women",
-        Strikeoffprice : 1649,
-        Price:  825,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-002840_1.jpg",
-        Name: "Disney Mickey & Friends Pink Sweatshirt For Women",
-        Strikeoffprice :1799 ,
-        Price: 810 ,
-        Catagery:"T-shirt"
-    },
-    {
-        Image:"https://shopdisney.in/media/catalog/product/cache/653b84d7c049b572e5becd44f2ff8080/s/t/sty-20-21-002665_1.jpg",
-        Name: "Disney Mickey & Friends Navy Blue Hoodie For Women",
-        Strikeoffprice : 2199,
-        Price: 880 ,
-        Catagery:"T-shirt"
-    },
+
+
+
+
+
+
 
 
 ]
 
-displayData(womensdata)
+displayData(toysdata)
 function handlePriceSort(){
     console.log("YES")
     var sort= document.querySelector("#sortprice").value
     
     if(sort == "htl"){
-        womensdata.sort(function (a, b) {
+        toysdata.sort(function (a, b) {
         return b.Price - a.Price;
     });
-        displayData(womensdata);
+        displayData(toysdata);
     }
 
     if(sort == "lth"){
-        womensdata.sort(function (a, b) {
+        toysdata.sort(function (a, b) {
         return a.Price - b.Price;
     });
-        displayData(womensdata);
+        displayData(toysdata);
     }
 }
 
@@ -520,38 +527,39 @@ function handleNameSort(){
   var sort = document.querySelector("#sortNames").value
   // console.log(sort)
   if(sort == "ascending"){
-    womensdata.sort(function (a,b){
+    toysdata.sort(function (a,b){
       if(a.Name > b.Name) return 1
       if(a.Name< b.Name ) return -1
       return 0
     })
     console.log("Yes")
-    displayData(womensdata)
+    displayData(toysdata)
   }
 
   if(sort == "descending"){
-    womensdata.sort(function (a,b){
+    toysdata.sort(function (a,b){
       if(a.Name > b.Name) return -1
       if(a.Name < b.Name ) return 1
       return 0
     })
     console.log("NOO")
-    displayData(womensdata)
+    displayData(toysdata)
   }
 }
 
-function handleCatSort(){
-  var sort = document.querySelector("#filtercat").value;
+// function handleCatSort(){
+//   var sort = document.querySelector("#filtercat").value
 
-  var sortlist = womensdata.filter(function (elem){
-      return elem.Catagery == sort;
-  })
-  displayData(sortlist)
-}
+//   if(sort == "T-shirt"){
+//      var Tshirt = toysdata.catagery == "T-shirt"
+//     displayData(toysdata.catagery == Tshirt)
+//     console.log("Bag")
+//   }
+// }
   
-    function displayData(womensdata){
+    function displayData(toysdata){
         document.querySelector("#grid").innerHTML=""
-        womensdata.map(function (elem){
+        toysdata.map(function (elem){
             
         var maindiv = document.createElement("div")
         maindiv.setAttribute("id","maindiv")
