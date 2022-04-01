@@ -10,14 +10,16 @@
 <body>
     <div class="nav">
         <div class="guest">
-          <h1>Guest Services</h1>
+          <a href="guest.html"> <h1>Guest Services</h1></a>
         </div>
   
         <div class="logo">
-          <img
+          
+            <img
             src="https://shopdisney.in/media/logo/stores/1/shopDisney_1.png"
             alt=""
           />
+          
         </div>
   
         <div class="nav-right">
@@ -430,6 +432,7 @@ function handleNameSort(){
 
         var cart = document.createElement("button")
         cart.innerText="Add to cart"
+        cart.setAttribute("id","btn")
         cart.addEventListener("click", function(){
             cartfun(elem)
       })
