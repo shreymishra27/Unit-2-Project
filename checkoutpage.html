@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+         /* nav bar */
+ svg {
+        height: 20px;
+      }
+      h1 {
+        font-size: 14px;
+        font-weight: 400;
+      }
+      a {
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration: none;
+        color: black;
+      }
+ .nav {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        padding: 0 20px;
+      }
+      .guest {
+        display: flex;
+        align-items: center;
+      }
+      .logo {
+        justify-self: center;
+      }
+      .logo > img {
+        height: 42px;
+      }
+      .nav-right {
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .sign {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .wishList {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .cart {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      svg {
+        fill: #0795e6;
+      }
+
+        main{
+            width: 100%;
+            min-height: 100vh;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+
+        }
+        .container{
+            background: white;
+            max-width: 800px;
+            min-height: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px;
+        }
+        .left{
+            width: 50%;
+        }
+        .right{
+            width: 50%;
+        }
+        form{
+            padding: 10px;
+        }
+        h3{
+            margin-top: 1rem;
+            color: #2c3e50;
+        }
+        form input[type="text"]{
+            width: 100%;
+            padding: 5px 10px;
+            margin: 5px 0px;
+            outline: none;
+        }
+        #zip{
+            display: flex;
+            margin-top: 5px;
+        }
+        #zip select{
+            padding: 5px 10px;
+        }
+        #zip input[type="number"]{
+            padding: 5px 10px;
+            margin-left: 5px;
+        }
+        img{
+            width: 100%;
+        }
+        .year{
+            width: 90%;
+        }
+    a{
+             display: inline-block;
+             width: 100%;
+             padding: 10px 15px;
+             background: #34495e;
+             color: white;
+             border: none;
+             margin-top: 10px;
+             cursor: pointer;
+             text-decoration: none;
+             text-align: center;
+        }
+        @media only screen and (max-width:770px){
+            .container{
+                flex-direction: column;
+            }
+           
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="guest">
+          <h1>Guest Services</h1>
+        </div>
+  
+        <div class="logo">
+          <img
+            src="https://shopdisney.in/media/logo/stores/1/shopDisney_1.png"
+            alt=""
+          />
+        </div>
+  
+         
+        </div>
+      </div>
+    <main>
+     <div class="container">
+         <div class="left">
+             <h3>BILLING ADDRESS</h3>
+             <form action="">
+                 Fullname
+                 <input type="text" name="" placeholder="Enter name">
+                 Email
+                 <input type="text" name="" placeholder="Enter email">
+                 Address
+                 <input type="text" name="" placeholder="Enter adress">
+                 City
+                 <input type="text" name="" placeholder="Enter city">
+                 <div  id="zip">
+                     <label for="">
+                         state
+                         <select name="" id="">
+                             <option value="">Please Select State</option>
+                             <option value="">Rajasthan</option>
+                             <option value="">Hariyana</option>
+                             <option value="">Utter Pradesh</option>
+                             <option value="">Madhya Pradesh</option>
+                         </select>
+                     </label>
+                     <label for="">
+                         ZipCode
+                         <input type="number" name="" placeholder="Zip Code">
+                     </label>
+                 </div>
+             </form>
+         </div>
+         <div class="right">
+            <h3>PAYMENT</h3>
+            <form action="">
+                Accepted Card
+                <img src="https://shopdisney.in/media/footer_social_media_icon/cards.img.jpg" alt=""><br><br>
+                Account Number
+                <input type="text" name="" placeholder="Enter card number">
+                Name
+                <input type="text" name="" placeholder="Name">
+                
+                <div  id="zip">
+                    <label for="">
+                        Expiry year
+                        <input type="number" name="" placeholder="MM/YY" class="year">
+                    </label>
+                    <label for="">
+                        Cvv
+                        <input type="number" name="" placeholder="Enter your cvv">
+                    </label>
+                </div>
+                <a href="succespage.html">Click here to proceed</a>
+            </form>
+         </div>
+     </div>
+    </main>
+</body>
+</html>
