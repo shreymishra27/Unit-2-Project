@@ -708,7 +708,6 @@
         display: flex;
         flex-wrap: wrap;
       }
-
       }
     </style>
   </head>
@@ -1310,7 +1309,7 @@
           class="signLogo"
         />
         <p class="acc">Create your account</p>
-        <form action="">
+        <form action="" id="signUp-form">
           <input type="text" placeholder="First Name" id="first" />
           <input type="text" placeholder="Last Name" id="last" />
           <input type="email" placeholder="Email Address" id="email" />
@@ -1335,7 +1334,7 @@
           id="signLogo"
         />
         <p id="acc">Sign in</p>
-        <form action="">
+        <form action="" id="signIn-form">
           <input
             type="text"
             id="userName"
@@ -1414,7 +1413,7 @@
     document.querySelector(".bg-modal").style.display = "none";
   }
 
-  document.querySelector("form").addEventListener("submit", function () {
+  document.querySelector("#signUp-form").addEventListener("submit", function () {
     event.preventDefault();
 
     var userData = JSON.parse(localStorage.getItem("userCreds")) || [];
@@ -1431,8 +1430,34 @@
     userData.push(userObj);
 
     localStorage.setItem("userCreds", JSON.stringify(userData));
+    
     window.location.href= "afterSign.html";
+    alert("Login Successful!")
+
   });
+  
+  document.querySelector("#signIn-form").addEventListener("submit", function(){
+    event.preventDefault();
+    var regdUsers= JSON.parse(localStorage.getItem("userCreds"));
+
+    var enteredEmail= document.querySelector("#userName").value;
+    var enteredPass= document.querySelector("#password").value;
+    
+    for(var i= 0; i<regdUsers.length; i++){
+      if(regdUsers[i].email == enteredEmail && regdUsers[i].password == enteredPass)
+      {
+        alert("Login Succesfull!")
+        window.location.href = "afterSign.html";
+        break;
+      }
+      else
+      {
+        alert("Login Failure!")
+        window.location.href = "index.html";
+        break;
+      }
+    }
+  })
 </script>
 <!-- JavaScript Bundle with Popper bootstrap -->
 <script
