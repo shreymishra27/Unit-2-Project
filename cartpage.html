@@ -44,14 +44,13 @@ img{
 }
 #box2{
     margin-top: 50px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 #box2>table{
     border-collapse: collapse;
   width: 80%;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 a{
     text-decoration: none;
@@ -100,15 +99,26 @@ a{
 .emptycart{
   margin: 10px 20px;
 }
-.heading div h1{
-  font-weight: 800;
-    padding-bottom: 10px;
-    color: #222;
-    font-size: 24px;
-    padding-left: 26px;
-    text-transform: uppercase;
+.box1 tbody tr{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
+.footer_sign button{
+  background: #0795e6;
+    border-style: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+#box2 table{
+  margin-top: 0px;
+}
+.heading div{
+  font-size: 25px;
+    text-transform: uppercse;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 20px;
+}
 
  /* nav bar */
  svg {
@@ -170,18 +180,54 @@ a{
           flex-direction: column;
         }
       }
-      .left-body tr{
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      footer{
+        width: 80%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        gap: 40px;
+        color: #777777;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #e7e7e7;
+        border-top: 1px solid #e7e7e7;
       }
-      .left-body button{
-        background: #34495e;
-        color: white;
+      footer a{
+        color: #777777;
       }
-      .left-body a {
-        background: #34495e;
-        color: white;
+      .col_right{
+        display: flex;
+        gap: 40px;
       }
 
+      .footer_right div hr{
+        border: 1px solid #777777;
+     height: 142px;
+      }
+      .footer_right li{
+        list-style: none;
+      }
+      .footer_img>img{
+        width: 500px;
+    height: 40px;
+    margin-left: 30px;
+      }
+      .col_right ul{
+        padding-left:0px ;
+      }
+      .copy_right_container ul{
+        display: flex;
+      }
+      .copy_right_container ul li{
+        list-style: none;
+      }
+      .copy_right_container ul li::after {
+    content: "|";
+    padding: 0 3px;
+}
+::after{
+  box-sizing: inherit;
+}
 
     </style>
 </head>
@@ -205,7 +251,9 @@ a{
                 d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
               />
             </svg>
-            <span id="para">Hi Shrey!</span>
+            <a href="#" id="buttons">Sign In </a>
+            <a href="">|</a>
+            <a href="#" id="button">Sign Up </a>
           </div>
   
           <div class="wishList">
@@ -244,7 +292,7 @@ a{
                         </tr> -->
                     </thead>
                     
-                    <tbody  class="left-body">
+                    <tbody>
                         
                     </tbody>
                 </table>
@@ -261,6 +309,83 @@ a{
             </table>
         </div>
 
+    </div>
+    <footer>
+      <div class="footer_left">
+        <div class="footer_sign">
+        <p>Sign up for our emails to get the inside scoop on special offers and new products.</p>
+        <button>sign up</button>
+        <span>Stay in touch</span> <br>
+        <a href="#">privacy policy</a>
+      </div>
+        <div class="payment">
+          <ul>
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter-square"></i>
+            <i class="fa fa-youtube-play"></i>
+          </ul>
+        </div>
+      </div>
+      <div class="footer_right">
+        <div class="col_right">
+        <div class="col-mid1">
+          <ul>
+            <li><a href="">Characters</a></li>
+            <li><a href="">Disney</a></li>
+            <li><a href="">Pixar</a></li>
+            <li><a href="">Marvel</a></li>
+            <li><a href="">Star Wars</a></li>
+          </ul>
+        </div>
+        <div>
+          <hr>
+        </div>
+        <div class="col-mid2">
+          <ul>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Site Map</a></li>
+            <li><a href="">New</a></li>
+            <li><a href="">Sale</a></li>
+           
+          </ul>
+        </div>
+        <div class="col-mid3">
+          <ul>
+            <li><a href="">Order Tracking</a></li>
+            <li><a href="">Return/Exchange</a></li>
+            <li><a href="">Shipping Info</a></li>
+            <li><a href="">Account Info</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-mid4">
+          <ul>
+            <li><a href="">Guest Services</a></li>
+            <li><a href="">About shopDisney</a></li>
+            <li><a href="">List of all Sellers</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="footer_img">
+      <img src="https://shopdisney.in/media/footer_social_media_icon/cards.img.jpg" alt="">
+      </div>
+      </div>
+
+    </footer>
+    <div class="copy_right_container">
+      <div class="container">
+        <ul>
+          <li>© Disney, All Rights Reserved</li>
+          <li><a href="">Terms of Use</a></li>
+          <li><a href="">Supplemental Terms of Use</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Addendum to Privacy Policy- for India</a></li>
+          <li><a href="">Customer Terms and Conditions</a></li>
+          <li><a href="">Seller Terms of Use</a></li>
+        </ul>
+      </div>
     </div>
 
 </body>
