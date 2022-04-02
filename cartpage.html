@@ -44,13 +44,14 @@ img{
 }
 #box2{
     margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 #box2>table{
     border-collapse: collapse;
   width: 80%;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 a{
     text-decoration: none;
@@ -98,6 +99,14 @@ a{
 }
 .emptycart{
   margin: 10px 20px;
+}
+.heading div h1{
+  font-weight: 800;
+    padding-bottom: 10px;
+    color: #222;
+    font-size: 24px;
+    padding-left: 26px;
+    text-transform: uppercase;
 }
 
 
@@ -160,6 +169,17 @@ a{
         #container{
           flex-direction: column;
         }
+      }
+      .left-body tr{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .left-body button{
+        background: #34495e;
+        color: white;
+      }
+      .left-body a {
+        background: #34495e;
+        color: white;
       }
 
 
@@ -224,7 +244,7 @@ a{
                         </tr> -->
                     </thead>
                     
-                    <tbody>
+                    <tbody  class="left-body">
                         
                     </tbody>
                 </table>
