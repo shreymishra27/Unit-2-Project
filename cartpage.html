@@ -161,7 +161,54 @@ a{
           flex-direction: column;
         }
       }
+      footer{
+        width: 80%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        gap: 40px;
+        color: #777777;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #e7e7e7;
+        border-top: 1px solid #e7e7e7;
+      }
+      footer a{
+        color: #777777;
+      }
+      .col_right{
+        display: flex;
+        gap: 40px;
+      }
 
+      .footer_right div hr{
+        border: 1px solid #777777;
+     height: 142px;
+      }
+      .footer_right li{
+        list-style: none;
+      }
+      .footer_img>img{
+        width: 500px;
+    height: 40px;
+    margin-left: 30px;
+      }
+      .col_right ul{
+        padding-left:0px ;
+      }
+      .copy_right_container ul{
+        display: flex;
+      }
+      .copy_right_container ul li{
+        list-style: none;
+      }
+      .copy_right_container ul li::after {
+    content: "|";
+    padding: 0 3px;
+}
+::after{
+  box-sizing: inherit;
+}
 
     </style>
 </head>
@@ -243,6 +290,83 @@ a{
             </table>
         </div>
 
+    </div>
+    <footer>
+      <div class="footer_left">
+        <div class="footer_sign">
+        <p>Sign up for our emails to get the inside scoop on special offers and new products.</p>
+        <button>sign up</button>
+        <span>Stay in touch</span> <br>
+        <a href="#">privacy policy</a>
+      </div>
+        <div class="payment">
+          <ul>
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter-square"></i>
+            <i class="fa fa-youtube-play"></i>
+          </ul>
+        </div>
+      </div>
+      <div class="footer_right">
+        <div class="col_right">
+        <div class="col-mid1">
+          <ul>
+            <li><a href="">Characters</a></li>
+            <li><a href="">Disney</a></li>
+            <li><a href="">Pixar</a></li>
+            <li><a href="">Marvel</a></li>
+            <li><a href="">Star Wars</a></li>
+          </ul>
+        </div>
+        <div>
+          <hr>
+        </div>
+        <div class="col-mid2">
+          <ul>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Site Map</a></li>
+            <li><a href="">New</a></li>
+            <li><a href="">Sale</a></li>
+           
+          </ul>
+        </div>
+        <div class="col-mid3">
+          <ul>
+            <li><a href="">Order Tracking</a></li>
+            <li><a href="">Return/Exchange</a></li>
+            <li><a href="">Shipping Info</a></li>
+            <li><a href="">Account Info</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-mid4">
+          <ul>
+            <li><a href="">Guest Services</a></li>
+            <li><a href="">About shopDisney</a></li>
+            <li><a href="">List of all Sellers</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="footer_img">
+      <img src="https://shopdisney.in/media/footer_social_media_icon/cards.img.jpg" alt="">
+      </div>
+      </div>
+
+    </footer>
+    <div class="copy_right_container">
+      <div class="container">
+        <ul>
+          <li>© Disney, All Rights Reserved</li>
+          <li><a href="">Terms of Use</a></li>
+          <li><a href="">Supplemental Terms of Use</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Addendum to Privacy Policy- for India</a></li>
+          <li><a href="">Customer Terms and Conditions</a></li>
+          <li><a href="">Seller Terms of Use</a></li>
+        </ul>
+      </div>
     </div>
 
 </body>
