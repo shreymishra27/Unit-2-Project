@@ -44,6 +44,7 @@ img{
 }
 #box2{
     margin-top: 50px;
+
 }
 #box2>table{
     border-collapse: collapse;
@@ -94,6 +95,9 @@ a{
 .itemmanage{
     display: flex;
     justify-content: space-around;
+}
+.emptycart{
+  margin: 10px 20px;
 }
 
 
@@ -151,6 +155,11 @@ a{
       }
       svg {
         fill: #0795e6;
+      }
+      @media only screen and (max-width:770px){
+        #container{
+          flex-direction: column;
+        }
       }
 
 
@@ -239,10 +248,11 @@ a{
 <script>
    
   var cartData = JSON.parse(localStorage.getItem("cart"));
-  if(cartData.length>0){
-     showdata(cartData)
+  console.log(cartData)
+  if(cartData==null){
+    emptycart() 
   }else{
-    emptycart()
+    showdata(cartData)
   }
   function showdata(cartData){
     var row = document.createElement("tr");
