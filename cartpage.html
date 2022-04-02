@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;800&family=Prompt&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b514214265.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Prompt', sans-serif;
+        }
+        #container{
+            display: flex;
+        }
+        table,
+td,
+th {
+  /* border: 1px solid #ddd; */
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+ th,td
+ {
+  padding:10px 35px;
+}
+.box>th:nth-child(1){
+    padding-right:300px
+}
+.cartcontain{
+    display: flex;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+#box2{
+    margin-top: 50px;
+
+}
+#box2>table{
+    border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+a{
+    text-decoration: none;
+}
+.total{
+    font-size: 30px;
+    font-weight: bold;
+}
+.subtotal{
+    font-size: 20px;
+    font-weight: bold;
+}
+.cart-btn{
+    display: block;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    background-color: #0795e6;
+    border-style: none;
+    color: #fff;
+}
+.guest-btn{
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px 0px;
+    text-align: center;
+    
+    border:1px solid #0795e6;
+}
+.guest-btn:hover{
+    background-color: #0795e6;
+    color: #fff;
+}
+.itemqty{
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    
+}
+.itemmanage{
+    display: flex;
+    justify-content: space-around;
+}
+.emptycart{
+  margin: 10px 20px;
+}
+.box1 tbody tr{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.footer_sign button{
+  background: #0795e6;
+    border-style: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+#box2 table{
+  margin-top: 0px;
+}
+.heading div{
+  font-size: 25px;
+    text-transform: uppercse;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+ /* nav bar */
+ svg {
+        height: 20px;
+      }
+      h1 {
+        font-size: 14px;
+        font-weight: 400;
+      }
+      a {
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration: none;
+        color: black;
+      }
+ .nav {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        padding: 0 20px;
+      }
+      .guest {
+        display: flex;
+        align-items: center;
+      }
+      .logo {
+        justify-self: center;
+      }
+      .logo > img {
+        height: 42px;
+      }
+      .nav-right {
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .sign {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .wishList {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .cart {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      svg {
+        fill: #0795e6;
+      }
+      @media only screen and (max-width:770px){
+        #container{
+          flex-direction: column;
+        }
+      }
+      footer{
+        width: 80%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        gap: 40px;
+        color: #777777;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #e7e7e7;
+        border-top: 1px solid #e7e7e7;
+      }
+      footer a{
+        color: #777777;
+      }
+      .col_right{
+        display: flex;
+        gap: 40px;
+      }
+
+      .footer_right div hr{
+        border: 1px solid #777777;
+     height: 142px;
+      }
+      .footer_right li{
+        list-style: none;
+      }
+      .footer_img>img{
+        width: 500px;
+    height: 40px;
+    margin-left: 30px;
+      }
+      .col_right ul{
+        padding-left:0px ;
+      }
+      .copy_right_container ul{
+        display: flex;
+      }
+      .copy_right_container ul li{
+        list-style: none;
+      }
+      .copy_right_container ul li::after {
+    content: "|";
+    padding: 0 3px;
+}
+::after{
+  box-sizing: inherit;
+}
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="guest">
+          <h1>Guest Services</h1>
+        </div>
+  
+        <div class="logo">
+          <img
+            src="https://shopdisney.in/media/logo/stores/1/shopDisney_1.png"
+            alt=""
+          />
+        </div>
+  
+        <div class="nav-right">
+          <div class="sign">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+              />
+            </svg>
+            <a href="#" id="buttons">Sign In </a>
+            <a href="">|</a>
+            <a href="#" id="button">Sign Up </a>
+          </div>
+  
+          <div class="wishList">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"
+              />
+            </svg>
+            <a href="">My Wishlist</a>
+          </div>
+          <!-- <div class="cart">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <!-- <path
+                d="M112 112C112 50.14 162.1 0 224 0C285.9 0 336 50.14 336 112V160H400C426.5 160 448 181.5 448 208V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V208C0 181.5 21.49 160 48 160H112V112zM160 160H288V112C288 76.65 259.3 48 224 48C188.7 48 160 76.65 160 112V160zM136 256C149.3 256 160 245.3 160 232C160 218.7 149.3 208 136 208C122.7 208 112 218.7 112 232C112 245.3 122.7 256 136 256zM312 208C298.7 208 288 218.7 288 232C288 245.3 298.7 256 312 256C325.3 256 336 245.3 336 232C336 218.7 325.3 208 312 208z"
+              />
+            </svg>
+            <span>0</span>
+            <a href="cartpage.html">My Bag</a>
+          </div> --> 
+        </div>
+      </div>
+
+
+    <div id="container">
+        <div class="box1">
+            <main>
+                <table>
+                    <thead>
+                        <!-- <tr>
+                            <th><span>name</span></th>
+                            <th>price</th>
+                            <th>qty</th>
+                            <th>subtotal</th>
+                        </tr> -->
+                    </thead>
+                    
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </main>
+            <div class="emptycart"></div>
+        </div>
+        <div id="box2">
+            <!-- <h1>Order Summary</h1>
+            <hr> -->
+            <div class="heading"></div>
+            <table>
+                <tbody class="box3">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <footer>
+      <div class="footer_left">
+        <div class="footer_sign">
+        <p>Sign up for our emails to get the inside scoop on special offers and new products.</p>
+        <button>sign up</button>
+        <span>Stay in touch</span> <br>
+        <a href="#">privacy policy</a>
+      </div>
+        <div class="payment">
+          <ul>
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter-square"></i>
+            <i class="fa fa-youtube-play"></i>
+          </ul>
+        </div>
+      </div>
+      <div class="footer_right">
+        <div class="col_right">
+        <div class="col-mid1">
+          <ul>
+            <li><a href="">Characters</a></li>
+            <li><a href="">Disney</a></li>
+            <li><a href="">Pixar</a></li>
+            <li><a href="">Marvel</a></li>
+            <li><a href="">Star Wars</a></li>
+          </ul>
+        </div>
+        <div>
+          <hr>
+        </div>
+        <div class="col-mid2">
+          <ul>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Site Map</a></li>
+            <li><a href="">New</a></li>
+            <li><a href="">Sale</a></li>
+           
+          </ul>
+        </div>
+        <div class="col-mid3">
+          <ul>
+            <li><a href="">Order Tracking</a></li>
+            <li><a href="">Return/Exchange</a></li>
+            <li><a href="">Shipping Info</a></li>
+            <li><a href="">Account Info</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-mid4">
+          <ul>
+            <li><a href="">Guest Services</a></li>
+            <li><a href="">About shopDisney</a></li>
+            <li><a href="">List of all Sellers</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="footer_img">
+      <img src="https://shopdisney.in/media/footer_social_media_icon/cards.img.jpg" alt="">
+      </div>
+      </div>
+
+    </footer>
+    <div class="copy_right_container">
+      <div class="container">
+        <ul>
+          <li>© Disney, All Rights Reserved</li>
+          <li><a href="">Terms of Use</a></li>
+          <li><a href="">Supplemental Terms of Use</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Addendum to Privacy Policy- for India</a></li>
+          <li><a href="">Customer Terms and Conditions</a></li>
+          <li><a href="">Seller Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+
+</body>
+</html>
+<script>
+   
+  var cartData = JSON.parse(localStorage.getItem("cart"));
+  console.log(cartData)
+  if(cartData==null){
+    emptycart() 
+  }else{
+    showdata(cartData)
+  }
+  function showdata(cartData){
+    var row = document.createElement("tr");
+
+var td1 = document.createElement("th");
+td1.innerText ="name"
+
+var td2 = document.createElement("th");
+td2.innerText = "price"
+var td3 = document.createElement("th");
+td3.innerText = "qty"
+var td4 = document.createElement("th");
+td4.innerText = "subtotal"
+
+
+
+row.append(td1, td2,td3,td4);
+
+document.querySelector("thead").append(row);
+
+  cartData.map(function(el,index){
+   
+
+      var tr = document.createElement("tr");
+      var td1 = document.createElement("td");
+      var main= document.createElement("div");
+      main.setAttribute("class","cartcontain")
+      var box1= document.createElement("div");
+      var img = document.createElement("img");
+      img.src = el.Image;
+      box1.append(img)
+      var box2= document.createElement("div");
+      var name = document.createElement("p");
+      name.innerHTML = el.Name;
+      var button= document.createElement("button");
+      button.textContent = "remove";
+      button.addEventListener("click",function(){
+          removeitem(el,index)
+      })
+      var button2 = document.createElement("button");
+      var a = document.createElement("a");
+      a.href="mens.html";
+      a.innerHTML= "edit"
+      button2.append(a);
+      box2.append(name,button2,button)
+      main.append(box1,box2);
+      td1.append(main);
+
+      var td2 = document.createElement("td");
+      td2.innerHTML = el.Price;
+      var td3 = document.createElement("td");
+      td3.setAttribute("class" ,"itemqty")
+      var div = document.createElement("div");
+      div.setAttribute("class","itemmanage");
+      var i1 = document.createElement("i");
+      i1.setAttribute("class","fa-solid fa-minus");
+      var span = document.createElement("span");
+      var i2 = document.createElement("i");
+      i2.setAttribute("class","fa-solid fa-plus");
+      span.innerHTML= el.Incart;
+      div.append(i1,span,i2);
+      td3.append(div)
+      var td4 = document.createElement("td");
+      td4.innerHTML = el.Price*el.Incart;
+      
+      tr.append(td1,td2,td3,td4);
+      document.querySelector("tbody").append(tr)
+
+  })
+  function removeitem(el,index){
+      console.log(el,index);
+      cartData.splice(index,1);
+      console.log(cartData);
+      localStorage.setItem("cart",JSON.stringify(cartData));
+      window.location.reload()
+
+
+  }
+  
+   var total = cartData.reduce(function(sum,el){
+          return sum+(el.Price*el.Incart)
+   },0)
+   console.log(total)
+   var div = document.createElement("div")
+     var h1 = document.createElement("h1");
+     h1.innerText = "order summery";
+     div.append(h1)
+     document.querySelector(".heading").append(div)
+ 
+    var tr1 = document.createElement("tr");
+    var th = document.createElement("th");
+    th.innerHTML= "Subtotal";
+    var td = document.createElement("td");
+    td.setAttribute("class","subtotal")
+    td.innerHTML= total
+    tr1.append(th,td);
+    var tr2 = document.createElement("tr");
+    var th = document.createElement("th");
+    th.innerHTML = "Total";
+    var td = document.createElement("td");
+    td.setAttribute("class","total")
+    td.innerHTML = total
+    tr2.append(th,td);
+
+    var signin = document.createElement("button");
+    signin.setAttribute("class","cart-btn")
+    signin.textContent= "sign in"
+    var guestcheckout = document.createElement("a");
+    guestcheckout.href="checkoutpage.html"
+    guestcheckout.setAttribute("class","guest-btn")
+    guestcheckout.textContent= "Guest checkout"
+    document.querySelector(".box3").append(tr1,tr2);
+    document.querySelector("#box2").append(signin,guestcheckout);
+    var box2 = document.querySelector("#box2");
+    box2.style.width="30%";
+    box2.style.height="300px";
+    box2.style.border="1px solid #dddddd";
+    
+
+  }
+
+  function emptycart(){
+    var signin_link = document.createElement("a");
+    signin_link.href = "http://test.com";
+    signin_link.target = '_blank';
+    signin_link.innerHTML = "sign in";
+
+     var shopping_link = document.createElement("a");
+     shopping_link.href = "shoppinglink.com";
+     shopping_link.target = "_blank";
+     shopping_link.innerHTML= "here"
+
+
+      var a = document.createElement("a");
+      a.href ="www.google.com";
+      a.target = "_blank";
+      a.innerHTML= "sign in"
+     var p1 = document.createElement("p");
+     p1.innerHTML= "Hakuna Matata. Your bag is empty!";
+     var p2 = document.createElement("p");
+     p2.innerHTML="Not seeing items you've added?";
+     p2.appendChild(signin_link)
+     var p3 = document.createElement("p");
+     
+     p3.innerHTML = "Click here to continue shopping.";
+    
+
+     document.querySelector(".emptycart").append(p1,p2,p3)
+
+  }
+
+</script>
