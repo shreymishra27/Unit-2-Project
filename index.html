@@ -708,8 +708,67 @@
         display: flex;
         flex-wrap: wrap;
       }
-
       }
+      /* footer */
+     .footer #heading{
+            font-size: large;
+            text-align: center;
+        }
+        .footer #delivery{
+            width: 60%;
+            height: 40%;
+        }
+        .footer #flex{
+            display: flex;
+            gap: 3%;
+        }
+        .footer #flex>div{
+            line-height: 5px;
+            margin-top: -0.5%;
+        }
+        .footer button{
+            width: 30%;
+            height: 35px;
+            margin-top: 2%;
+            color: white;
+            background-color: #0795e6;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+        }
+        .footer #mainDiv{
+            display: flex;
+            gap: 5%;
+        }
+        .footer #details{
+            display: flex;
+            gap: 3%;
+            width: 70%;
+            margin-top: -1.5%;
+        }
+        .footer #details>div{
+            width: 22%;
+        }
+        .footer #details>p:hover{
+            background-color: rgb(92, 175, 216);
+        }
+        .footer #logos{
+            width: 50%;
+            height: 50px;
+            margin-top: 3%;
+
+
+        }
+        .footer #payments{
+           margin-left: 50%;
+           width: 40%;
+           margin-top: -3%;
+        }
+        .footer #data{
+            display:flex;
+            gap: 10%;
+            width: 90%;
+        }
     </style>
   </head>
 
@@ -1310,7 +1369,7 @@
           class="signLogo"
         />
         <p class="acc">Create your account</p>
-        <form action="">
+        <form action="" id="signUp-form">
           <input type="text" placeholder="First Name" id="first" />
           <input type="text" placeholder="Last Name" id="last" />
           <input type="email" placeholder="Email Address" id="email" />
@@ -1335,7 +1394,7 @@
           id="signLogo"
         />
         <p id="acc">Sign in</p>
-        <form action="">
+        <form action="" id="signIn-form">
           <input
             type="text"
             id="userName"
@@ -1346,6 +1405,69 @@
         </form>
         <button id="submitt">Create an Account</button>
       </div>
+    </div>
+
+
+   
+    <div class ="footer">
+      <p id="heading">The Birthday Store</p>
+      <div>
+          <img src="https://shopdisney.in/media/March/2022/11.jpg" alt="">
+      </div>
+      <div>
+          <center>
+              <img id="delivery" src="https://shopdisney.in/media/June/footermobile.jpg" alt="">
+          </center>
+      </div>
+      <div id="mainDiv">
+          <div>
+              Sign up for our emails to get the inside scoop on special <br> offers and new products.
+              <br>
+              <div id="flex">
+                  <button>Sign up</button>
+              <div>
+                  <p>stay in touch</p>
+                  <a href="">privacy Policy</a>
+              </div>
+              </div>
+              <div>
+                  <img id="logos" src="https://logodix.com/logo/352037.jpg" alt="">
+              </div>
+          </div>
+          <div id="details">
+              <div>
+                  <p>Characters</p>
+                  <p>Disney</p>
+                  <p>Pixar</p>
+                  <p>Marvel</p>
+                  <p>Star Wars</p>
+              </div>
+              <div>
+                  <p>Contact Us</p>
+                  <p>Site Map</p>
+                  <p>New</p>
+                  <p>Sale</p>
+              </div>
+              <div>
+                  <p>Order Tracking</p>
+                  <p>Return/Exchange</p>
+                  <p>Shipping Info</p>
+                  <p>Account Info</p>
+              </div>
+              <div>
+                  <p>Guest Services</p>
+                  <p>About shopDisney</p>
+                  <p>List of all Sellers</p>
+                  <p></p>
+              </div>
+              
+          </div>
+          
+      </div>
+      <img id="payments" src="https://shopdisney.in/media/footer_social_media_icon/cards.img.jpg" alt="">
+  
+      <hr>
+
     </div>
   </body>
 </html>
@@ -1414,7 +1536,7 @@
     document.querySelector(".bg-modal").style.display = "none";
   }
 
-  document.querySelector("form").addEventListener("submit", function () {
+  document.querySelector("#signUp-form").addEventListener("submit", function () {
     event.preventDefault();
 
     var userData = JSON.parse(localStorage.getItem("userCreds")) || [];
@@ -1431,8 +1553,34 @@
     userData.push(userObj);
 
     localStorage.setItem("userCreds", JSON.stringify(userData));
+    
     window.location.href= "afterSign.html";
+    alert("Login Successful!")
+
   });
+  
+  document.querySelector("#signIn-form").addEventListener("submit", function(){
+    event.preventDefault();
+    var regdUsers= JSON.parse(localStorage.getItem("userCreds"));
+
+    var enteredEmail= document.querySelector("#userName").value;
+    var enteredPass= document.querySelector("#password").value;
+    
+    for(var i= 0; i<regdUsers.length; i++){
+      if(regdUsers[i].email == enteredEmail && regdUsers[i].password == enteredPass)
+      {
+        alert("Login Succesfull!")
+        window.location.href = "afterSign.html";
+        break;
+      }
+      else
+      {
+        alert("Login Failure!")
+        window.location.href = "index.html";
+        break;
+      }
+    }
+  })
 </script>
 <!-- JavaScript Bundle with Popper bootstrap -->
 <script
@@ -1465,4 +1613,10 @@
   }
   onloadcartnumber();
   cartNumber();
+
+  document.querySelector("#submitt").addEventListener("click", function(){
+    document.querySelector(".bg-modal").style.display = "flex";
+    document.querySelector(".signin-modal").style.display = "none";
+
+  })
 </script>

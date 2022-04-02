@@ -708,17 +708,103 @@
         display: flex;
         flex-wrap: wrap;
       }
-      #para{
-          padding-top: 200px;
       }
-      }
+      /* footer */
+     .footer #heading{
+            font-size: large;
+            text-align: center;
+        }
+        .footer #delivery{
+            width: 60%;
+            height: 40%;
+        }
+        .footer #flex{
+            display: flex;
+            gap: 3%;
+        }
+        .footer #flex>div{
+            line-height: 5px;
+            margin-top: -0.5%;
+        }
+        .footer button{
+            width: 30%;
+            height: 35px;
+            margin-top: 2%;
+            color: white;
+            background-color: #0795e6;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+        }
+        .footer #mainDiv{
+            display: flex;
+            gap: 5%;
+        }
+        .footer #details{
+            display: flex;
+            gap: 3%;
+            width: 70%;
+            margin-top: -1.5%;
+        }
+        .footer #details>div{
+            width: 22%;
+        }
+        .footer #details>p:hover{
+            background-color: rgb(92, 175, 216);
+        }
+        .footer #logos{
+            width: 50%;
+            height: 50px;
+            margin-top: 3%;
+
+
+        }
+        .footer #payments{
+           margin-left: 50%;
+           width: 40%;
+           margin-top: -3%;
+        }
+        .footer #data{
+            display:flex;
+            gap: 10%;
+            width: 90%;
+        }
+        .dropDown {
+          display: block;
+          width: 160px;
+          height: 160px;
+          display: none;
+          margin-left: 1100px;
+          margin-top: -20px;
+          justify-content: space-evenly;
+          /* align-content: center; */
+          font-size: 15px;
+          padding-top: 30px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
+        }
+        .dropDown>li {
+          margin-bottom: 25px;
+        }
+        .dropDown>li:hover {
+          margin-bottom: 15px;
+          color: #0795e6;
+          cursor: pointer;
+        }
+        #dropicon {
+          color: #0795e6;
+        }
+        #dropicon:hover {
+          color: #0795e6;
+          cursor: pointer;
+        }
     </style>
   </head>
 
   <body>
     <div class="nav">
       <div class="guest">
-        <h1>Guest Services</h1>
+        <a href="guest.html"><h1>Guest Services</h1></a>
       </div>
 
       <div class="logo">
@@ -735,7 +821,8 @@
               d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
             />
           </svg>
-          <p id="para">Hi Shrey!</p>
+          <span>Hi Shrey!</span>
+          <span id="dropicon">></span>
         </div>
 
         <div class="wishList">
@@ -760,6 +847,15 @@
       </div>
     </div>
     <br />
+    
+    <div class="dropDown">
+      <ul type="none">
+        <li><a href="">My Account</a></li>
+        <li><a href="">Address Book</a></li>
+        <li><a href="">My Orders</a></li>
+        <li><a href="index.html">Sign Out</li>
+      </ul>
+    </div>
     <div class="nav-2">
       <div class="sale">
         <a href="deals.html"><h1>NEW</h1></a>
@@ -1310,7 +1406,7 @@
           class="signLogo"
         />
         <p class="acc">Create your account</p>
-        <form action="">
+        <form action="" id="signUp-form">
           <input type="text" placeholder="First Name" id="first" />
           <input type="text" placeholder="Last Name" id="last" />
           <input type="email" placeholder="Email Address" id="email" />
@@ -1335,7 +1431,7 @@
           id="signLogo"
         />
         <p id="acc">Sign in</p>
-        <form action="">
+        <form action="" id="signIn-form">
           <input
             type="text"
             id="userName"
@@ -1346,6 +1442,69 @@
         </form>
         <button id="submitt">Create an Account</button>
       </div>
+    </div>
+
+
+   
+    <div class ="footer">
+      <p id="heading">The Birthday Store</p>
+      <div>
+          <img src="https://shopdisney.in/media/March/2022/11.jpg" alt="">
+      </div>
+      <div>
+          <center>
+              <img id="delivery" src="https://shopdisney.in/media/June/footermobile.jpg" alt="">
+          </center>
+      </div>
+      <div id="mainDiv">
+          <div>
+              Sign up for our emails to get the inside scoop on special <br> offers and new products.
+              <br>
+              <div id="flex">
+                  <button>Sign up</button>
+              <div>
+                  <p>stay in touch</p>
+                  <a href="">privacy Policy</a>
+              </div>
+              </div>
+              <div>
+                  <img id="logos" src="https://logodix.com/logo/352037.jpg" alt="">
+              </div>
+          </div>
+          <div id="details">
+              <div>
+                  <p>Characters</p>
+                  <p>Disney</p>
+                  <p>Pixar</p>
+                  <p>Marvel</p>
+                  <p>Star Wars</p>
+              </div>
+              <div>
+                  <p>Contact Us</p>
+                  <p>Site Map</p>
+                  <p>New</p>
+                  <p>Sale</p>
+              </div>
+              <div>
+                  <p>Order Tracking</p>
+                  <p>Return/Exchange</p>
+                  <p>Shipping Info</p>
+                  <p>Account Info</p>
+              </div>
+              <div>
+                  <p>Guest Services</p>
+                  <p>About shopDisney</p>
+                  <p>List of all Sellers</p>
+                  <p></p>
+              </div>
+              
+          </div>
+          
+      </div>
+      <img id="payments" src="https://shopdisney.in/media/footer_social_media_icon/cards.img.jpg" alt="">
+  
+      <hr>
+
     </div>
   </body>
 </html>
@@ -1414,7 +1573,7 @@
     document.querySelector(".bg-modal").style.display = "none";
   }
 
-  document.querySelector("form").addEventListener("submit", function () {
+  document.querySelector("#signUp-form").addEventListener("submit", function () {
     event.preventDefault();
 
     var userData = JSON.parse(localStorage.getItem("userCreds")) || [];
@@ -1431,8 +1590,34 @@
     userData.push(userObj);
 
     localStorage.setItem("userCreds", JSON.stringify(userData));
-    window.location.reload();
+    
+    window.location.href= "afterSign.html";
+    alert("Login Successful!")
+
   });
+  
+  document.querySelector("#signIn-form").addEventListener("submit", function(){
+    event.preventDefault();
+    var regdUsers= JSON.parse(localStorage.getItem("userCreds"));
+
+    var enteredEmail= document.querySelector("#userName").value;
+    var enteredPass= document.querySelector("#password").value;
+    
+    for(var i= 0; i<regdUsers.length; i++){
+      if(regdUsers[i].email == enteredEmail && regdUsers[i].password == enteredPass)
+      {
+        alert("Login Succesfull!")
+        window.location.href = "afterSign.html";
+        break;
+      }
+      else
+      {
+        alert("Login Failure!")
+        window.location.href = "index.html";
+        break;
+      }
+    }
+  })
 </script>
 <!-- JavaScript Bundle with Popper bootstrap -->
 <script
@@ -1457,12 +1642,20 @@
       localStorage.setItem("cartNumber", productnumber + 1);
       document.querySelector("#cartno").textContent = productnumber + 1;
     } else {
-      localStorage.setItem("cartNumber", 1);
-      document.querySelector("#cartno").innerText = 1;
+      localStorage.setItem("cartNumber", 0);
+      document.querySelector("#cartno").innerText = 0;
     }
   
   
   }
   onloadcartnumber();
   cartNumber();
+
+  document.querySelector("#dropicon").addEventListener("click", dropFunc);
+
+  function dropFunc() {
+    document.querySelector(".dropDown").style.display = "flex";
+  }
+  
+ 
 </script>
