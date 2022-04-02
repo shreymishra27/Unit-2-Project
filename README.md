@@ -25,8 +25,8 @@ Some standout functionalties that we have used here that gave this website a sub
 
 Some common functionalities that we have used in this website are as follows:
 
-1.Product pages
-2.Cart page
-3.Sign Up Functional Page
-4.Sorting algorithm  for sorting things in the categorized pages
-5.Drop Down Menu
+1.Product pages.
+2.Cart page.
+3.Sign Up Functional Page.
+4.Sorting algorithm  for sorting things in the categorized pages.
+5.Drop Down Menu.
