@@ -87,5 +87,7 @@ I am Abdullah Bin Hassan going to tell you about my first team project using HTM
 - Used HTML And CSS to get to the desired result and to look like a complete clone.
 
 # G Anil Kumar:
-- Worked on the Guest Services page
+- Worked on the Footer Part of the website
+- In this there are different parts such as contact us, account info and also signup button
+- User can also connect to twitter , facebook and other social media handles
 - Used HTML And CSS to get to the desired result and to look like a complete clone.
