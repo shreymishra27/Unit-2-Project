@@ -88,6 +88,7 @@ I am Abdullah Bin Hassan going to tell you about my first team project using HTM
 - if user want to shop more products the page will redirect to home page
 
 # Nitesh:
+My Blog link : https://medium.com/@niteshnaidu13/project-shopdisney-website-clone-4dae716af95
 
 - Worked on the Guest Services page
 - Used HTML And CSS to get to the desired result and to look like a complete clone.
