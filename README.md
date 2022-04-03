@@ -2,7 +2,10 @@
 
 Hello everyone, This is our first collaborative project at Masai School. We are this project in regards of the Unit-2 construct week.
 This project is a website clone of ShopDisney.com and is based on the framework Javascript made with the help of HTML a popular markup language and styled with the help of CSS. 
+
 We have done our best to make this website look exactly like the original website and hope you all appreciate our kind efforts.
+
+Netlify Link Of the Website- https://capable-pudding-1f0353.netlify.app/
 
 # Acknowledgements
 
