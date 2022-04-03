@@ -1,7 +1,7 @@
 # Project ShopDisney Website Clone
 
 Hello everyone, This is our first collaborative project at Masai School. We are this project in regards of the Unit-2 construct week.
-This project is a website clone of ShopDisney.com and is based on the framework Javascript made with the help of HTML a popular markup language and styled with the help of CSS. 
+This project is a website clone of ShopDisney.com and is based on the framework Javascript made with the help of HTML a popular markup language and styled with the help of CSS.
 
 We have done our best to make this website look exactly like the original website and hope you all appreciate our kind efforts.
 
@@ -30,7 +30,7 @@ Some standout functionalties that we have used here that gave this website a sub
 
 # Screenshots of Some Features
 
-Home Page 
+Home Page
 
 ![landingPage](https://user-images.githubusercontent.com/98751679/161430944-f53ce797-14e8-4017-9d36-edbe7a3c804c.jpg)
 
@@ -45,7 +45,6 @@ Category Pages
 Cart Page
 
 ![cartpage](https://user-images.githubusercontent.com/98751679/161431000-df453583-7d96-4d80-83f9-36ea38eaf045.jpg)
-
 
 # Roles and Responsibilities
 
@@ -62,7 +61,8 @@ My linkedin profile:https://www.linkedin.com/in/shrey-mishra-2a35131b8/
 
 # Sarbjot Singh:
 
-My linked profile- www.linkedin.com/in/sarbjot-
+My Linked Profile- www.linkedin.com/in/sarbjot-
+My Blog Link- https://medium.com/@sarbjots908/project-shopdisney-website-clone-82b0d0d252dd
 
 - Worked on the landing page and learned how to collaborate with the team on Github.
 - Learned how to use javascript to style sliding components and DOM manipulation.
@@ -74,11 +74,13 @@ My linked profile- www.linkedin.com/in/sarbjot-
 My LinkedIn profile: https://www.linkedin.com/in/abdullah-bin-hassan-936a17233/
 
 I am Abdullah Bin Hassan going to tell you about my first team project using HTML, CSS, and JavaScript.
+
 - I worked on all the product pages.
 - I have used Grid property to create the products and media qurey to create responsive web page.
 - I learn a lot of things in JavaScript, learn more about local storage, how to append, add the product to the cart, and also improved my HTML & CSS, I like working as a team, interact with each other professionally.
 
 # Ashish Kumar Prusty:
+
 - after when user want to buy some products they have to click add to cart buttonwhen user click add to cart the product will go the cart page and a message will popupproduct addded to cart also user can the no of products in their cart
 - after this when user click my bag the page will redirected to the cartpage where user can see all their desire product as they want to buy .here user can also edit their product and also delete their product if they dont want to buy that product
 - after this user have to click guest checkout when user click guest checkout the page redirected to the checkoutpage
@@ -86,10 +88,12 @@ I am Abdullah Bin Hassan going to tell you about my first team project using HTM
 - if user want to shop more products the page will redirect to home page
 
 # Nitesh:
+
 - Worked on the Guest Services page
 - Used HTML And CSS to get to the desired result and to look like a complete clone.
 
 # G Anil Kumar:
+
 - Worked on the Footer Part of the website
 - In this there are different parts such as contact us, account info and also signup button
 - User can also connect to twitter , facebook and other social media handles
