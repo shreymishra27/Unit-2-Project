@@ -1,34 +1,41 @@
+#Project ShopDisney Website Clone
 
-
-Project ShopDisney Website Clone
 Hello everyone, This is our first collaborative project at Masai School. We are this project in regards of the Unit-2 construct week.
-This project is a website clone of ShopDisney.com and is based on the framework Javascript made with the help of HTML a popular markup language and styled with the help of CSS. We have done our best to make this website look exactly like the original website and hope you all appreciate our kind efforts.
-Acknowledgements
+This project is a website clone of ShopDisney.com and is based on the framework Javascript made with the help of HTML a popular markup language and styled with the help of CSS. 
+We have done our best to make this website look exactly like the original website and hope you all appreciate our kind efforts.
+
+#Acknowledgements
+
 The following are the teammates who have put in their precious efforts in making this project happen:
-Shrey Mishra
-Sarbjot Singh
-Abdullah Bin Hassan
-Ashish Kumar Prusty
-G Anil Kumar
-Nitesh
 
-Functionalities and Features
+- Shrey Mishra
+- Sarbjot Singh
+- Abdullah Bin Hassan
+- Ashish Kumar Prusty
+- G Anil Kumar
+- Nitesh
+
+#Functionalities and Features
+
 We have a bunch of functionalities and elements that makes this project standout and look exactly like the real shopdisney.in website.
-Some standout functionalties that we have used here that gave this website a subtle but an exceptional touch are:
-The Sliding Part: The sliding category part in the homepage is built on Transform CSS property.
-Sign Up and Sign In: The Sign in and Sign up part are built on Position Absolute CSS Property and could not have been easier if not for this property.
-Transition Part: The transitioned elements after the sliding part is built by using this property.
 
-Screenshots of Some Features
-Home Page 
+Some standout functionalties that we have used here that gave this website a subtle but an exceptional touch are:
+
+- The Sliding Part: The sliding category part in the homepage is built on Transform CSS property.
+- Sign Up and Sign In: The Sign in and Sign up part are built on Position Absolute CSS Property and could not have been easier if not for this property.
+- Transition Part: The transitioned elements after the sliding part is built by using this property.
+
+#Screenshots of Some Features
+
+#Home Page 
 
 ![landingPage](https://user-images.githubusercontent.com/98751679/161430944-f53ce797-14e8-4017-9d36-edbe7a3c804c.jpg)
 
-Sign Up
+3Sign Up
 
 ![signupModal](https://user-images.githubusercontent.com/98751679/161430973-4a12282b-f1ae-4007-9270-053680baa344.jpg)
 
-Category Pages
+#Category Pages
 
 ![Categry](https://user-images.githubusercontent.com/98751679/161430986-fbe659a7-bb4d-4472-a5af-fb3ae8ac487f.jpg)
 
