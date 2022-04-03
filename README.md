@@ -48,7 +48,7 @@ Cart Page
 
 Team Contributions:
 
-##Shrey Mishra:
+# Shrey Mishra:
 
 My linkedin profile:https://www.linkedin.com/in/shrey-mishra-2a35131b8/
 
@@ -57,7 +57,7 @@ My linkedin profile:https://www.linkedin.com/in/shrey-mishra-2a35131b8/
 - The CSS part was used efficiently and accordingly as required.
 - Learned how to work as a team and gained the knowledge of helping others.
 
-##Sarbjot Singh:
+# Sarbjot Singh:
 
 My linked profile- www.linkedin.com/in/sarbjot-
 
@@ -66,7 +66,7 @@ My linked profile- www.linkedin.com/in/sarbjot-
 - Learned how to lead the team and communicate in an effective manner.
 - Uses almost all important CSS properties to clone the home page.
 
-##Abdullah Bin Hassan -
+# Abdullah Bin Hassan -
 
 My LinkedIn profile: https://www.linkedin.com/in/abdullah-bin-hassan-936a17233/
 
@@ -75,17 +75,17 @@ I am Abdullah Bin Hassan going to tell you about my first team project using HTM
 - I have used Grid property to create the products and media qurey to create responsive web page.
 - I learn a lot of things in JavaScript, learn more about local storage, how to append, add the product to the cart, and also improved my HTML & CSS, I like working as a team, interact with each other professionally.
 
-##Ashish Kumar Prusty:
+# Ashish Kumar Prusty:
 - after when user want to buy some products they have to click add to cart buttonwhen user click add to cart the product will go the cart page and a message will popupproduct addded to cart also user can the no of products in their cart
 - after this when user click my bag the page will redirected to the cartpage where user can see all their desire product as they want to buy .here user can also edit their product and also delete their product if they dont want to buy that product
 - after this user have to click guest checkout when user click guest checkout the page redirected to the checkoutpage
 - user have to fill shipping details and debit card details and here we use localstorage for saving data after filling all details user have to click click here to proceed then it will redirect to succces page
 - if user want to shop more products the page will redirect to home page
 
-##Nitesh:
+# Nitesh:
 - Worked on the Guest Services page
 - Used HTML And CSS to get to the desired result and to look like a complete clone.
 
-##G Anil Kumar:
+# G Anil Kumar:
 - Worked on the Guest Services page
 - Used HTML And CSS to get to the desired result and to look like a complete clone.
