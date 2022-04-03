@@ -1,4 +1,4 @@
-#Project ShopDisney Website Clone
+# Project ShopDisney Website Clone
 
 Hello everyone, This is our first collaborative project at Masai School. We are this project in regards of the Unit-2 construct week.
 This project is a website clone of ShopDisney.com and is based on the framework Javascript made with the help of HTML a popular markup language and styled with the help of CSS. 
