@@ -80,6 +80,8 @@ I am Abdullah Bin Hassan going to tell you about my first team project using HTM
 - I learn a lot of things in JavaScript, learn more about local storage, how to append, add the product to the cart, and also improved my HTML & CSS, I like working as a team, interact with each other professionally.
 
 # Ashish Kumar Prusty:
+My Linked Profile-https://www.linkedin.com/in/ashish-kumar-prusty-19294b191/
+My Blog Link- https://medium.com/@ashisprusty71/cloning-shop-disney-sites-ceb0526abab
 
 - after when user want to buy some products they have to click add to cart buttonwhen user click add to cart the product will go the cart page and a message will popupproduct addded to cart also user can the no of products in their cart
 - after this when user click my bag the page will redirected to the cartpage where user can see all their desire product as they want to buy .here user can also edit their product and also delete their product if they dont want to buy that product
